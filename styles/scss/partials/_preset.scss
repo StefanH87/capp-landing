@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+main,
+div,
+span,
+section,
+article,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+footer,
+header,
+button,
+input,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+------------------------------------:root {
+  --surface-light: white;
+
+  $primary-dark: hsl(141, 45%, 38%);
+  $primary-light: hsl(141, 45%, 64%);
+  $bg-clr: #f0f0f0;
+
+  $font-default: 16px;
+  $smallFont: 3rem;
+}
