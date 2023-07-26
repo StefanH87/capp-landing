@@ -9,6 +9,7 @@
     width: 90vw;
     height: 90%;
     background: linear-gradient(to bottom, $primary-dark, $primary-light);
+
     box-shadow: inset -10% -10% 0px rgb(0, 0, 0, 0.1),
       inset -900px -180px 0px rgb(0, 0, 0, 0.2);
     border-radius: 0 0 clamp(10rem, 10vw, 20rem) 0;
