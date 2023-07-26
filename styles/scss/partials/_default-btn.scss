@@ -1,0 +1,38 @@
+.btn-default {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 5rem;
+  color: red;
+  all: unset;
+  cursor: pointer;
+  border: 2px solid $primary-mid;
+  position: relative;
+  width: 4rem;
+  height: 2rem;
+  padding-inline: 10%;
+  padding-block: 0.5rem;
+  border-radius: 1rem;
+  position: relative;
+  transition: width 0.3s ease-in-out;
+  &:hover {
+    width: 5rem;
+    svg {
+      translate: 50% 0;
+      opacity: 1;
+    }
+  }
+  p {
+    font-size: 0.5rem;
+    color: $primary-mid;
+  }
+  svg {
+    width: 2rem;
+    position: absolute;
+    top: 0;
+    left: 70%;
+    transition: translate 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+    fill: $primary-mid;
+  }
+}

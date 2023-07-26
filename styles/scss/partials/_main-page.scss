@@ -1,0 +1,99 @@
+.main-page__wrapper {
+  width: 100vw;
+  height: max-content;
+  display: grid;
+  margin-block: 2rem;
+  background: $bg-clr;
+  overflow: hidden;
+
+  article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  h2 {
+    @include headingText(white);
+    font-weight: map-get($font-weights, bold);
+  }
+}
+.mp-holder__text {
+  p {
+    @include mainText(green);
+  }
+}
+.main-page_holder-1,
+.main-page_holder-2,
+.main-page_holder-3 {
+  background: $secondary-light;
+  width: 90vw;
+}
+.main-page_holder-1 {
+  @include flexMainPage(row);
+  height: max-content;
+  margin-left: 10vw;
+
+  border-radius: 4rem 0 0 4rem;
+}
+.main-page_holder-2 {
+  @include flexMainPage(row-reverse);
+  height: max-content;
+  margin-left: -10vw;
+  border-radius: 0 4rem 4rem 0;
+}
+.main-page_holder-3 {
+  @include flexMainPage(row);
+  height: max-content;
+  margin-left: 10vw;
+  border-radius: 4rem 0 0 4rem;
+}
+
+.mp-holder__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+
+  padding-inline: 1rem;
+  border: 1px solid white;
+  width: 30vw;
+  height: auto;
+
+  h2 {
+    color: red;
+
+    @include headingText($primary-mid);
+  }
+  p:nth-child(2) {
+    font-size: 1rem;
+    @include mainText($primary-mid);
+    padding-block: 2rem 3rem;
+  }
+  button {
+    align-self: center;
+  }
+}
+
+.mp-holder__svg {
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
+  width: max-content;
+  overflow: hidden;
+  height: 100%;
+
+  svg {
+    width: 60%;
+    min-height: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main-page__wrapper {
+    width: 100vw;
+    height: max-content;
+    display: grid;
+    margin-block: 2rem;
+    background: blue;
+  }
+}

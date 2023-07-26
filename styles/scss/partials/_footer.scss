@@ -1,0 +1,44 @@
+@mixin flexRow($flex-width) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: $flex-width;
+}
+
+footer {
+  @include flexRow(100%);
+  background: pink;
+  height: 15vh;
+
+  .footer-content__wrapper {
+    @include flexRow(98%);
+    margin-inline: auto;
+
+    ul {
+      @include flexRow(20%);
+      list-style-type: none;
+      text-decoration: none;
+
+      li {
+        a {
+          text-decoration: none;
+          color: red;
+          margin-bottom: 0.5rem;
+          margin: 1rem;
+          &:hover {
+            color: red;
+          }
+          &:active {
+            color: green;
+          }
+          &:focus {
+            all: unset;
+
+            border-bottom: 1px solid black;
+            color: pink;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,15 +29,59 @@ li {
 
 html {
   scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
 }
 
-------------------------------------:root {
-  --surface-light: white;
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $bg-clr;
+}
+main {
+  width: 100%;
+  height: 100%;
+}
 
-  $primary-dark: hsl(141, 45%, 38%);
-  $primary-light: hsl(141, 45%, 64%);
-  $bg-clr: #f0f0f0;
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto/Roboto-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
 
-  $font-default: 16px;
-  $smallFont: 3rem;
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto/Roboto-Regular.woff2") format("woff2");
+
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto/Roboto-Medium.woff2") format("woff2");
+
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto/Roboto-Black.woff2") format("woff2");
+
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto/Roboto-Bold.woff2") format("woff2");
+
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
 }

@@ -10,7 +10,8 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "scripts": {
-    "sass-dev": "sass styles/scss:styles/css"
+    "sass-dev": "sass --watch styles/scss:styles/css",
+    "sass-prod": "sass --no-source-map --style=compressed styles/scss:styles/css"
   },
   "keywords": [],
   "author": "",
