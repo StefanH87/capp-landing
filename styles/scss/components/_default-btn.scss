@@ -15,6 +15,13 @@
   border-radius: 1rem;
   position: relative;
   transition: width 0.3s ease-in-out;
+  &:active {
+    border-color: red;
+    svg {
+      translate: 50% 0;
+      opacity: 1;
+    }
+  }
   &:hover {
     width: 5rem;
     svg {
@@ -30,7 +37,7 @@
     width: 2rem;
     position: absolute;
     top: 0;
-    left: 70%;
+    left: 60%;
     transition: translate 0.3s ease-in-out, opacity 0.2s ease-in-out;
     opacity: 0;
     fill: $primary-mid;

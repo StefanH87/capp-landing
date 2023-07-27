@@ -1,0 +1,74 @@
+//=====    Typo ===== //
+//main-heading
+@mixin headingText($color) {
+  font: {
+    size: map-get($font-sizes, header-big);
+  }
+  color: $color;
+}
+//mainpage-heading
+@mixin mainText($color) {
+  font: {
+    size: map-get($font-sizes, header-small);
+  }
+  font-weight: map-get($font-weights, regular);
+  color: $color;
+}
+//subheading
+@mixin subheading($color) {
+  font: {
+    size: map-get($font-sizes, subheading);
+  }
+  font-weight: map-get($font-weights, thin);
+  color: $color;
+}
+//small text
+@mixin small-text($color) {
+  font: {
+    size: map-get($font-sizes, default-text);
+  }
+  font-weight: map-get($font-weights, thin);
+  color: $color;
+}
+//=====    Main page Sections ===== //
+@mixin flexMainPage($direction) {
+  display: flex;
+
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  align-items: center;
+  padding-block: 15vh;
+  margin-bottom: 10vh;
+  min-height: 60vh;
+}
+//=====    Flex Default ===== //
+@mixin flexBasis($direction, $align-item, $justify-con) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-item;
+  justify-content: $justify-con;
+}
+//=====    Position Abs ===== //
+@mixin absoluteItem($top, $left, $right, $bottom, $index) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  z-index: $index;
+}
+//=========================//
+$font-weights: (
+  "thin": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+  "thick": 900,
+);
+
+$font-sizes: (
+  "header-big": clamp(3rem, 10vw, 5rem),
+  "header-small": clamp(1rem, 10vw, 3rem),
+  "subheading": clamp(1.2rem, 10vw, 2rem),
+  "default-text": clamp(0.9rem, 10vw, 1.1rem),
+);

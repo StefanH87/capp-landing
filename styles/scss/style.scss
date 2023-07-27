@@ -1,12 +1,14 @@
-@import "partials/colors";
-@import "partials/preset";
-@import "partials/mixins-variables";
-@import "partials/header";
-@import "partials/default-btn";
+@import "globals/index";
+
+@import "components/default-btn";
+@import "components/header";
+@import "components/user-cards";
 @import "partials/landing-site";
 @import "partials/main-page";
 @import "partials/device-page";
-@import "partials/user-cards";
+@import "partials/user-commentar-page";
+// @import "partials/default-btn";
+
 @import "partials/footer";
 /*============================================*/
 

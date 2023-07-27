@@ -4,9 +4,13 @@ $primary-light: #5cc180;
 $secondary-dark: #f5f5f5;
 $secondary-light: #fbfbfb;
 $bg-clr: #f0f0f0;
-
+$accent-color: hsl(43, 91%, 48%);
 //fonts
 
 $clr-font-l: #ededed;
 $clr-font-m: #8b8b8b;
-$clr-font-d: #140101;
+$clr-font-d: #202020;
+
+//clr-border
+$clr-brd: $primary-dark;
+$clr-brd-light: $secondary-light;

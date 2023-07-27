@@ -27,15 +27,13 @@
     margin-left: 3rem;
 
     h1 {
-      color: white;
-      font-size: calc(4rem + 1vw);
+      @include headingText(white);
       font-family: Arial, Helvetica, sans-serif;
       width: 90%;
       margin-inline: auto;
     }
     p {
-      color: white;
-      font-size: 1.5rem;
+      @include subheading(white);
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 300;
       width: 90%;
@@ -132,24 +130,24 @@
   .sec__landing-page {
     .landing-site__bg {
       display: flex;
-      flex-direction: column;
-      justify-content: start;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
 
       width: 100vw;
       height: 100%;
 
       box-shadow: inset -10% -10% 0px rgb(0, 0, 0, 0.1),
         inset -900px -180px 0px rgb(0, 0, 0, 0.2);
-      border-radius: 0 0 clamp(5rem, 10vw, 10rem) 0;
-      // padding-top: 3rem;
+      border-radius: 0 0 clamp(rem, 10vw, 10rem) 0;
     }
     .landing-site__text-wrapper {
       // border:1px solid red;
-      width: 40vw;
+      width: 90vw;
       height: max-content;
-
-      border: 1px solid red;
+      margin-inline: auto;
       h1 {
+        font-size: 2rem;
         color: white;
         width: 100%;
         font-family: Arial, Helvetica, sans-serif;
@@ -162,49 +160,52 @@
       }
     }
   }
+  @mixin cloudPos($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+  }
   .svg-wrapper {
-    height: 95%;
-    width: max-content;
-    padding: 2rem;
-    align-self: center;
-    margin-left: 20%;
-    margin-bottom: 5rem;
-    border: 1p solid blue;
-    @mixin cloudPos($top, $left) {
-      // position: absolute;
-      top: $top;
-      left: $left;
-    }
+    // height: 95%;
+    // width: 3rem;
+    position: relative;
+    // border: 1px solid blue;
 
     .cloud {
       @include cloudPos(0, 0);
 
-      height: 20%;
+      width: 10rem;
     }
     .c-1 {
       fill: hsla(142, 100%, 100%, 0.3);
       @include cloudPos(-5%, 0);
-      height: 20%;
+      height: 50%;
       translate: 0% 0%;
+      animation: stop;
     }
     .c-2 {
       fill: hsl(0, 0%, 100%, 0.6);
       @include cloudPos(10%, 0);
-      height: 20%;
+      height: 70%;
       translate: 20% 0%;
-      animation: cloud 5s infinite ease-in-out;
+      animation: stop;
     }
     .c-3 {
       fill: hsl(0, 0%, 90%, 0.4);
       @include cloudPos(5%, 0);
       translate: -20% 0%;
-      animation: cloud-2 5s infinite ease-in-out;
+      animation: stop;
     }
   }
 
   .main-svg {
-    height: max-content;
-    width: 35vw;
+    height: 50%;
+    width: 90vw;
+    position: absolute;
+
+    top: 15%;
+    left: 5%;
+
     height: auto;
 
     // background-color: red;
