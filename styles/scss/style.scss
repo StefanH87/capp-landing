@@ -12,77 +12,8 @@
 // @import "partials/default-btn";
 
 @import "partials/footer";
-/*============================================*/
 
-section {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  // &:nth-child(2) {
-  //   background: $bg-clr;
-  // }
-  // &:nth-child(3) {
-  //   background: linear-gradient(to left, $primary-dark, $primary-light);
-  // }
-  // :nth-child(4) {
-  //   background: olive;
-  // }
-}
-/*================================================================*/
-
-/*==========================MainPage=======================================*/
-
-/*==================================================================================*/
-
-/*==============================Device Page===================================*/
-
-/*=========================================================================================*/
-/*================================Ending PAge========================================*/
-
-// #ending-page {
-//   background: olive;
-//   width: 100vw;
-//   height: 100vh;
-//   display: block;
-// }
-
-/*================================User Card========================================*/
-
-/*=========================Footer==================================*/
-
-@media screen and (max-width: 400px) {
-  .main-page_holder-1,
-  .main-page_holder-2,
-  .main-page_holder-3 {
-    min-height: 100vh;
-    min-height: 100dvh;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-block: 2rem;
-  }
-
-  .mp-holder__text {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: max-content;
-  }
-  .mp-holder__svg {
-    background: blue;
-    display: block;
-    width: 100%;
-    height: auto;
-    svg {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
+//
 #ending-page {
   background: darkblue;
 }

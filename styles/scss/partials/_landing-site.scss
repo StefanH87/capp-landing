@@ -1,6 +1,7 @@
 .sec__landing-page {
   background: $bg-clr;
   overflow: hidden;
+  height: 100vh;
   .landing-site__bg {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -16,25 +16,12 @@
   }
   .user-commentar_subheading {
     @include gridMiddle();
-    color: $clr-font-l;
 
-    font-size: 4.5rem;
-    font-weight: map-get($font-weights, thin);
+    @include headingText($clr-font-l);
+
     width: 60%;
     height: 90%;
-    p:first-of-type {
-      color: $clr-font-l;
-      font-size: 10rem;
-      margin-bottom: -5rem;
-      margin-left: -$marg-big;
-    }
-    p:last-of-type {
-      margin-top: -$marg-big;
-      margin-right: -$marg-big;
-      text-align: end;
-      color: $clr-font-l;
-      font-size: 10rem;
-    }
+
     h3 {
       text-align: left;
       margin-block: $padd-small $padd-med;

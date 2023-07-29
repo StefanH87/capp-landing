@@ -1,8 +1,6 @@
 .team-member__wrapper {
-  display: block;
-  height: 80%;
-  width: 100%;
   @include gridMiddle();
+  @include boxRectangle(100%, 80%);
   &:nth-child(odd) {
     margin-top: 4vw;
   }
@@ -19,25 +17,23 @@
     translate: -50% 0px;
   }
   .team-card__frame {
-    width: 20rem;
-    height: 25rem;
+    @include gridMiddle();
+    @include boxRectangle(20rem, 25rem);
     position: relative;
     transition: transform 0.8s;
     transform-style: preserve-3d;
     perspective: 500px;
     border-radius: $brd-rad-m;
-    @include gridMiddle();
     .team-card__front {
-      width: 20rem;
-      height: 25rem;
+      @include boxRectangle(20rem, 25rem);
+
       background: linear-gradient(to bottom, $primary-dark, $primary-light);
       position: absolute;
       border-radius: inherit;
       span {
-        width: 80%;
-        height: 100%;
-        margin-inline: auto;
+        @include boxRectangle(80%, 100%);
         @include flexBasis(column, center, space-between);
+        margin-inline: auto;
         p,
         a {
           transform: rotateY(180deg);
@@ -55,19 +51,17 @@
       }
     }
     .team-card__back {
-      width: 20rem;
-      height: 25rem;
+      @include boxRectangle(20rem, 25rem);
+      @include flexBasis(column, center, flex-end);
       background: linear-gradient(to bottom, $primary-dark, $primary-light-s);
       position: absolute;
       backface-visibility: hidden;
       border-radius: $brd-rad-m;
-      @include flexBasis(column, center, flex-end);
 
       .team-card_img {
-        width: 75%;
+        @include boxRectangle(75%, 90%);
         @include absoluteItem(0, 50%, 0, 0, 0);
         translate: -50% -90px;
-        height: 90%;
         transition: translate 0.3s, height 0.4s;
         margin-inline: auto;
         border-radius: inherit;
@@ -80,15 +74,12 @@
         margin-bottom: $marg-def;
       }
       .team-card-icons {
-        width: 70%;
-        height: 15%;
-        margin-inline: auto;
         @include flexBasis(row, center, center);
-
+        @include boxRectangle(70%, 15%);
+        margin-inline: auto;
         gap: 0.7rem;
         img {
-          width: 2rem;
-          height: 2rem;
+          @include boxQuarter($icon-s, $circle: false);
         }
       }
     }
