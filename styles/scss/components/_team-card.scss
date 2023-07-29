@@ -1,0 +1,96 @@
+.team-member__wrapper {
+  display: block;
+  height: 80%;
+  width: 100%;
+  @include gridMiddle();
+  &:nth-child(odd) {
+    margin-top: 4vw;
+  }
+  &:nth-child(even) {
+    margin-top: -4vw;
+  }
+  &.team-member__wrapper:hover .team-card__frame {
+    transform: rotateY(180deg);
+  }
+  &.team-member__wrapper:hover
+    .team-card__frame
+    .team-card__back
+    .team-card_img {
+    translate: -50% 0px;
+  }
+  .team-card__frame {
+    width: 20rem;
+    height: 25rem;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border-radius: $brd-rad-m;
+    @include gridMiddle();
+    .team-card__front {
+      width: 20rem;
+      height: 25rem;
+      background: linear-gradient(to bottom, $primary-dark, $primary-light);
+      position: absolute;
+      border-radius: inherit;
+      span {
+        width: 80%;
+        height: 100%;
+        margin-inline: auto;
+        @include flexBasis(column, center, space-between);
+        p,
+        a {
+          transform: rotateY(180deg);
+          width: 90%;
+          margin-inline: inherit;
+        }
+        p {
+          color: red;
+          padding-top: $padd-big;
+        }
+        a {
+          align-self: flex-end;
+          padding-bottom: $padd-big;
+        }
+      }
+    }
+    .team-card__back {
+      width: 20rem;
+      height: 25rem;
+      background: linear-gradient(to bottom, $primary-dark, $primary-light-s);
+      position: absolute;
+      backface-visibility: hidden;
+      border-radius: $brd-rad-m;
+      @include flexBasis(column, center, flex-end);
+
+      .team-card_img {
+        width: 75%;
+        @include absoluteItem(0, 50%, 0, 0, 0);
+        translate: -50% -90px;
+        height: 90%;
+        transition: translate 0.3s, height 0.4s;
+        margin-inline: auto;
+        border-radius: inherit;
+        background: $secondary-light;
+        background-image: url("/assets/svg/Images-pana.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      p {
+        margin-bottom: $marg-def;
+      }
+      .team-card-icons {
+        width: 70%;
+        height: 15%;
+        margin-inline: auto;
+        @include flexBasis(row, center, center);
+
+        gap: 0.7rem;
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

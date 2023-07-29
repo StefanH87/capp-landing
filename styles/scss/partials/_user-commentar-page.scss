@@ -1,15 +1,52 @@
 #user-commentar-page {
-  background: $bg-clr;
+  background: linear-gradient(to top, $primary-dark, $primary-light);
+  @include boxView();
   display: grid;
-  place-content: center;
+  grid-template-columns: 80% 20%;
+  .user-commentar__grid {
+    @include gridMiddle();
+    overflow: hidden;
+    background: $bg-clr;
+    border-radius: 0 150px 150px 0;
+    width: 90%;
+    height: 90%;
+    @media (max-width: 400px) {
+      border-radius: 0 100px 100px 0;
+    }
+  }
+  .user-commentar_subheading {
+    @include gridMiddle();
+    color: $clr-font-l;
+
+    font-size: 4.5rem;
+    font-weight: map-get($font-weights, thin);
+    width: 60%;
+    height: 90%;
+    p:first-of-type {
+      color: $clr-font-l;
+      font-size: 10rem;
+      margin-bottom: -5rem;
+      margin-left: -$marg-big;
+    }
+    p:last-of-type {
+      margin-top: -$marg-big;
+      margin-right: -$marg-big;
+      text-align: end;
+      color: $clr-font-l;
+      font-size: 10rem;
+    }
+    h3 {
+      text-align: left;
+      margin-block: $padd-small $padd-med;
+      text-transform: uppercase;
+    }
+  }
 }
 .user-commentar__img-holder {
-  width: 100vw;
+  width: 90vw;
   height: max-content;
-  // background-color: red;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin-inline: auto;
+  @include flexBasis(row, center, center);
   gap: 5rem;
 }
 

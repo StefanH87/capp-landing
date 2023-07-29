@@ -7,7 +7,7 @@
   border-top: 1px solid $clr-brd-light;
   border-right: 2px solid $clr-brd-light;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  padding-bottom: 1rem;
+  padding-bottom: 1.7rem;
 
   img {
     width: 100%;
@@ -22,7 +22,7 @@
 .user-comm__text-holder {
   position: relative;
   margin-top: -5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   width: 99%;
   height: 17rem;
   background: $clr-brd-light;
@@ -63,12 +63,12 @@
   margin-inline: auto;
 
   position: absolute;
-  bottom: -34px;
-  left: 230px;
+  bottom: -53px;
+  left: 180px;
   z-index: 5;
-  translate: -250px 0;
-  translate: -50% 50%;
-  padding: 1rem;
+
+  translate: -50% 0;
+  padding: 0.5rem;
   gap: 0.3rem;
   background: $secondary-light;
   border: 5px solid $clr-brd;

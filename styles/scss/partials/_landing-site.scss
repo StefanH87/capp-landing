@@ -1,6 +1,6 @@
 .sec__landing-page {
   background: $bg-clr;
-
+  overflow: hidden;
   .landing-site__bg {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,7 +51,7 @@
   align-self: center;
   margin-left: 20%;
   margin-bottom: 5rem;
-
+  overflow: hidden;
   position: relative;
 
   @mixin cloudPos($top, $left) {

@@ -30,20 +30,20 @@
 .main-page_holder-1 {
   @include flexMainPage(row);
   height: max-content;
-  margin-left: 10vw;
+  // margin-left: 10vw;
 
   border-radius: 4rem 0 0 4rem;
 }
 .main-page_holder-2 {
   @include flexMainPage(row-reverse);
   height: max-content;
-  margin-left: -10vw;
+  // margin-left: -10vw;
   border-radius: 0 4rem 4rem 0;
 }
 .main-page_holder-3 {
   @include flexMainPage(row);
   height: max-content;
-  margin-left: 10vw;
+  // margin-left: 10vw;
   border-radius: 4rem 0 0 4rem;
 }
 

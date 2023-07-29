@@ -7,6 +7,8 @@
 @import "partials/main-page";
 @import "partials/device-page";
 @import "partials/user-commentar-page";
+@import "components/team-card.scss";
+@import "partials/about-page";
 // @import "partials/default-btn";
 
 @import "partials/footer";
@@ -79,10 +81,6 @@ section {
       height: auto;
     }
   }
-}
-
-#about-page {
-  background: grey;
 }
 
 #ending-page {

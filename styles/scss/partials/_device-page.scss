@@ -1,5 +1,6 @@
 .device-page {
   height: 100vh;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 15% 1fr 15%;
@@ -9,16 +10,16 @@
 .bg-con {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   background: $bg-clr;
 
   &.bg-con-1 {
     border-radius: 0 0 0 150px;
-    margin-left: 3px;
+    // margin-left: 3px;
   }
   &.bg-con-2 {
     border-radius: 0 150px 0 0;
-    margin-right: 3px;
+    // margin-right: 3px;
   }
 }
 

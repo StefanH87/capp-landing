@@ -1,11 +1,11 @@
 header {
-  @include flexBasis(row, center, space-between);
+  @include flexBasis(row, center, left);
   background: transparent;
   align-items: center;
 
-  width: 100%;
+  width: 100vw;
   height: 80px;
-  padding-inline: 4rem;
+  // padding-inline: 4rem;
   position: fixed;
   transition: 0.4s;
 
@@ -41,9 +41,8 @@ header {
       }
     }
     .nav-link__wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include flexBasis(row, center, center);
+
       li {
         display: inline-flex;
         align-items: center;
@@ -85,8 +84,9 @@ header {
     }
   }
   header {
-    padding-left: 2rem;
-    position: fixed;
+    // padding-left: 2rem;
+    // position: fixed;
+    width: 100vw;
 
     top: 0px;
     height: 10vh;
@@ -102,13 +102,13 @@ header {
     .links-header-holder {
       // position: relative;
       padding-inline: 0;
-
+      width: 90%;
       .nav-link__wrapper {
         @include absoluteItem(0, 0, 0, 0, 0);
         @include flexBasis(column, center, center);
 
         height: min-content;
-        width: 100vw;
+        width: 100%;
         translate: 0 -100%;
         transition: translate 0.2s ease-in-out;
         background: white;

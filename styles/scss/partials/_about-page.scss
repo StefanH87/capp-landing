@@ -1,0 +1,49 @@
+#about-page {
+  background: linear-gradient(to bottom, $primary-dark, $primary-light);
+  @include boxView();
+  .about-page__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    width: 90%;
+    height: inherit;
+  }
+}
+@media screen and (min-width: 900px) {
+  #about-page {
+    background: linear-gradient(to bottom, $primary-dark, $primary-light);
+    width: 100vw;
+    height: 110vh;
+    .about-page__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      margin-inline: auto;
+      margin-left: 1%;
+      border-radius: 100px 0 0 100px;
+      width: 99%;
+      height: 110vh;
+      background: $bg-clr;
+      .about-page_team-heading {
+        grid-column: 1/-1;
+        height: 40%;
+        display: block;
+        padding-inline: auto;
+        h3,
+        p {
+          width: 80%;
+          margin-inline: auto;
+          text-align: center;
+        }
+        h3 {
+          padding-block: 3rem 2.5rem;
+          @include headingText($primary-dark);
+        }
+        p {
+          padding-bottom: $padd-big;
+          line-height: 1.2;
+          @include subheadingSmall($clr-font-m);
+        }
+      }
+    }
+  }
+}
