@@ -1,6 +1,10 @@
+$member-card-width: 20rem;
+$member-card-height: 25rem;
+
 .team-member__wrapper {
   @include gridMiddle();
   @include boxRectangle(100%, 80%);
+
   &:nth-child(odd) {
     margin-top: 4vw;
   }
@@ -19,20 +23,21 @@
   .team-card__frame {
     @include gridMiddle();
     @include boxRectangle(20rem, 25rem);
+    box-shadow: 0 0 20px $team-card-shadow;
     position: relative;
     transition: transform 0.8s;
     transform-style: preserve-3d;
     perspective: 500px;
     border-radius: $brd-rad-m;
     .team-card__front {
-      @include boxRectangle(20rem, 25rem);
+      @include boxRectangle($member-card-width, $member-card-height);
 
       background: linear-gradient(to bottom, $primary-dark, $primary-light);
       position: absolute;
       border-radius: inherit;
       span {
         @include boxRectangle(80%, 100%);
-        @include flexBasis(column, center, space-between);
+        @include flexBasis(column, center, center);
         margin-inline: auto;
         p,
         a {
@@ -41,17 +46,26 @@
           margin-inline: inherit;
         }
         p {
-          color: red;
-          padding-top: $padd-big;
+          @include small-text($clr-font-l);
+          padding-block: $padd-def;
+          margin-bottom: $marg-big;
+          border: {
+            top: 1px solid $clr-font-l;
+            bottom: 1px solid $clr-font-l;
+          }
         }
         a {
           align-self: flex-end;
-          padding-bottom: $padd-big;
+          width: max-content;
+          padding-bottom: $padd-small;
+          margin-bottom: $marg-def;
+          @include small-text($github-clr);
+          border-bottom: 1px solid $github-clr;
         }
       }
     }
     .team-card__back {
-      @include boxRectangle(20rem, 25rem);
+      @include boxRectangle($member-card-width, $member-card-height);
       @include flexBasis(column, center, flex-end);
       background: linear-gradient(to bottom, $primary-dark, $primary-light-s);
       position: absolute;
@@ -59,27 +73,35 @@
       border-radius: $brd-rad-m;
 
       .team-card_img {
+        box-shadow: 0 0 20px $team-card-shadow;
         @include boxRectangle(75%, 90%);
         @include absoluteItem(0, 50%, 0, 0, 0);
         translate: -50% -90px;
         transition: translate 0.3s, height 0.4s;
         margin-inline: auto;
         border-radius: inherit;
-        background: $secondary-light;
-        background-image: url("/assets/svg/Images-pana.svg");
-        background-position: center center;
-        background-repeat: no-repeat;
+        background: {
+          color: $secondary-light;
+          image: url("/assets/svg/Images-pana.svg");
+          position: center center;
+          repeat: no-repeat;
+        }
       }
       p {
         margin-bottom: $marg-def;
+        @include subheadingSmall($clr-font-l);
+
+        letter-spacing: 0.1;
       }
       .team-card-icons {
         @include flexBasis(row, center, center);
-        @include boxRectangle(70%, 15%);
-        margin-inline: auto;
-        gap: 0.7rem;
+        gap: $padd-xs;
+        margin-bottom: $marg-def;
         img {
           @include boxQuarter($icon-s, $circle: false);
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: $brd-rad-s;
+          padding: 0.2rem;
         }
       }
     }

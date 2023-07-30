@@ -2,8 +2,8 @@
 @media screen and (max-width: 400px) {
   header {
     @include boxRectangle(100vw, 10vh);
-    position: fixed;
-    top: 0;
+    // position: fixed;
+    // top: 0;
     .logo-font {
       color: white;
       width: max-content;

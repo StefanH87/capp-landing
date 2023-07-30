@@ -18,6 +18,7 @@
     border-radius: 0;
   }
   .main-page_holder-2 {
+    flex-direction: column;
     border-radius: 0 0 0 0;
     @media screen and (min-width: 900px) {
       border-radius: 0 150px 150px 0;
@@ -25,19 +26,26 @@
   }
   .main-page_holder-1,
   .main-page_holder-3 {
+    flex-direction: column;
     border-radius: 0 0 0 0;
     @media screen and (min-width: 900px) {
       border-radius: 150px 0 0 150px;
+      background: linear-gradient(to right, $bg-clr-d, $bg-clr);
     }
+    .mp-holder__text {
+      border-radius: 0 0 2rem 2rem;
+    }
+  }
+  .main-page_holder-3 {
+    border-radius: 0 0 3rem 3rem;
   }
 }
 
 .mp-holder__text {
   @include flexBasis(column, center, center);
-
-  // grid-row: 1/2;
+  gap: 1rem;
   padding-inline: 1rem;
-  background: linear-gradient(to bottom, $primary-dark, $primary-light);
+  background: linear-gradient(to top, $primary-dark, $primary-light);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   border-radius: 2rem 2rem 0 0;
   width: 92%;
@@ -45,22 +53,47 @@
   height: 100%;
 
   h2 {
-    @include headingText(blue);
+    @include headingText($clr-font-l);
+    text-transform: uppercase;
+    position: relative;
     display: inline-flex;
     align-items: center;
     font-weight: map-get($font-weights, bold);
-    width: 90%;
+    width: 100%;
     margin-inline: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      bottom: 0;
+      top: 100%;
+      height: 0.5rem;
+      background: linear-gradient(to right, $clr-font-l, transparent);
+      width: 80%;
+      border-radius: 1rem;
+      transition: 0.3s ease-in;
+    }
   }
   p {
-    @include small-text(green);
+    @include subheading($clr-font-l);
     width: 100%;
+    padding-block: 3vh;
   }
-  button {
-    align-self: center;
-  }
+
   .btn-default {
-    align-self: flex-start;
+    align-self: center;
+    border-color: $btn-color-mobile;
+    @media screen and (min-width: 900px) {
+      align-self: flex-start;
+    }
+    .btn-default_text {
+      color: $btn-color-mobile;
+    }
+    svg {
+      fill: $btn-color-mobile;
+    }
   }
 }
 
@@ -141,10 +174,7 @@
 
     h2 {
       @include headingText($primary-mid);
-      text-transform: uppercase;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
+
       font-weight: map-get($font-weights, bold);
       width: 100%;
       margin-inline: auto;
@@ -157,7 +187,7 @@
         bottom: 0;
         top: 100%;
         height: 0.5rem;
-        background: white;
+        background: $secondary-light;
         width: 3vw;
         border-radius: 1rem;
         transition: 0.3s ease-in;
@@ -168,8 +198,15 @@
       width: 100%;
       padding-block: 8vh;
     }
-    button {
-      align-self: center;
+    .btn-default {
+      $btn-color: $btn-color__mainpage;
+      border: 3px solid $btn-color;
+      .btn-default_text {
+        color: $btn-color__mainpage;
+      }
+      svg {
+        fill: $btn-color__mainpage;
+      }
     }
   }
 

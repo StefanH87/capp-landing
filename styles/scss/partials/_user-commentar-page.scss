@@ -2,83 +2,140 @@
   background: linear-gradient(to top, $primary-dark, $primary-light);
   @include boxView();
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 1fr;
+
   .user-commentar__grid {
     @include gridMiddle();
     overflow: hidden;
     background: $bg-clr;
-    border-radius: 0 150px 150px 0;
-    width: 90%;
-    height: 90%;
-    @media (max-width: 400px) {
-      border-radius: 0 100px 100px 0;
-    }
+    background: linear-gradient(to right, $bg-clr-d, $secondary-light);
+    border-radius: 2rem 2rem 0rem 0rem;
+    width: 100vw;
+    height: 100%;
+    margin-inline: auto;
+    position: relative;
   }
   .user-commentar_subheading {
     @include gridMiddle();
-
-    @include headingText($clr-font-l);
-
-    width: 60%;
+    grid-row: 1/2;
+    width: 90%;
     height: 90%;
-
+    margin-inline: auto;
     h3 {
+      @include headingText($clr-font-l);
+
       text-align: left;
-      margin-block: $padd-small $padd-med;
+      margin-block: 0 1rem;
       text-transform: uppercase;
+      opacity: 0.8;
     }
   }
 }
 .user-commentar__img-holder {
-  width: 90vw;
-  height: max-content;
+  width: 100%;
+  height: 95%;
   margin-inline: auto;
+  padding-block: 1rem;
   @include flexBasis(row, center, center);
-  gap: 5rem;
+
+  gap: 1rem;
+  grid-row: 2/3;
+
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
-#testcard {
-  animation: flow 5s infinite;
-}
-#testcard2 {
-  transition-delay: 0.2s;
-  animation: flow 5s infinite;
-  animation-delay: 0.2s;
-}
-#testcard3 {
-  transition-delay: 0.4s;
-  animation: flow 5s infinite;
-  animation-delay: 0.4s;
-}
+#testcard,
+#testcard2,
+#testcard3,
 #testcard4 {
-  transition-delay: 0.6s;
-  animation: flow 5s infinite;
-  animation-delay: 0.6s;
+  animation: none;
 }
 
-@keyframes flow {
-  0% {
-    translate: 500% 0;
-    opacity: 0;
-    transition: translate 0.6s ease-in-out, opacity 0.6s ease-in-out;
+@media screen and (min-width: 900px) {
+  #user-commentar-page {
+    background: linear-gradient(to top, $primary-dark, $primary-light);
+    @include boxView();
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto;
+    .user-commentar__grid {
+      @include gridMiddle();
+      overflow: hidden;
+      background: $bg-clr;
+      background: linear-gradient(to right, $bg-clr-d, $secondary-light);
+      border-radius: 0 100px 100px 0;
+      width: 95%;
+      height: 90%;
+      position: relative;
+    }
+    .user-commentar_subheading {
+      @include gridMiddle();
+      grid-column: 2/3;
+      width: 100%;
+      height: 90%;
+      h3 {
+        @include headingText($clr-font-l);
+        text-align: left;
+        margin-block: $padd-small $padd-med;
+        text-transform: uppercase;
+        opacity: $opac-device;
+      }
+    }
+  }
+  .user-commentar__img-holder {
+    grid-column: 1/2;
+    width: auto;
+    height: max-content;
+    margin-inline: auto;
+    @include flexBasis(row, center, center);
+    gap: 1rem;
+    overflow: unset;
+
+    white-space: normal;
   }
 
-  50% {
-    translate: 0% 0;
-    opacity: 1;
+  #testcard {
+    animation: flow 5s infinite;
   }
-  70% {
-    translate: 0% 0;
-    opacity: 1;
+  #testcard2 {
+    animation: flow 5s infinite;
+    animation-delay: 0.2s;
   }
-  95% {
-    translate: -500% 0;
-    opacity: 0;
-    transition: translate 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  #testcard3 {
+    animation: flow 5s infinite;
+    animation-delay: 0.4s;
   }
-  100% {
-    translate: 500% 0;
-    opacity: 0;
-    transition: translate 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  #testcard4 {
+    animation: flow 5s infinite;
+    animation-delay: 0.6s;
+  }
+
+  @keyframes flow {
+    0% {
+      translate: 0% -200%;
+      opacity: 0;
+      transition: translate 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
+
+    30% {
+      translate: 0% 0;
+      opacity: 1;
+    }
+    70% {
+      translate: 0% 0;
+      opacity: 1;
+    }
+    95% {
+      translate: -500% 0;
+      opacity: 0;
+      transition: translate 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
+    100% {
+      translate: 500% 0;
+      opacity: 0;
+      transition: translate 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
   }
 }

@@ -5,6 +5,7 @@ $primary-light-s: hsl(141, 48%, 62%);
 $secondary-dark: hsl(0, 0%, 96%);
 $secondary-light: hsl(0, 0%, 99%);
 $bg-clr: hsl(0, 0%, 94%);
+$bg-clr-d: hsl(0, 0%, 86%);
 $accent-color: hwb(43 4% 8%);
 
 //clouds
@@ -18,15 +19,18 @@ $link-bg: hsl(0, 0%, 99%, 0.08);
 
 //fonts
 
-$clr-font-l: #ededed;
-$clr-font-m: #8b8b8b;
-$clr-font-d: #202020;
-
+$clr-font-l: hsl(0, 0%, 93%);
+$clr-font-m: hsl(0, 0%, 55%);
+$clr-font-d: hsl(0, 0%, 13%);
+$github-clr: hsl(0, 0%, 20%, 0.6);
 $btn-color__mainpage: $primary-light;
+$btn-color: $btn-color__mainpage;
+$btn-color-mobile: $secondary-light;
 $btn-font: $clr-font-l;
-
+$team-card-shadow: hsla(0, 0%, 0%, 0.3);
 // a hover
 $a-hover: $primary-light-s;
+$footer-a-h: hsl(0, 0%, 20%, 0.8);
 //clr-border
 $clr-brd: $primary-dark;
 $clr-brd-light: $secondary-light;

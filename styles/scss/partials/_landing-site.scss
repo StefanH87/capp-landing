@@ -44,7 +44,7 @@
       }
     }
     .landing-site__list-text {
-      @include subheading(white);
+      @include small-text($clr-font-l);
       font-weight: 300;
       opacity: $opacity-l;
       width: 100%;
@@ -179,34 +179,38 @@
 @media screen and (max-width: 400px) {
   .sec__landing-page {
     .landing-site__bg {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      justify-content: center;
+      @include flexBasis(column-reverse, center, center);
 
       width: 100vw;
       height: 100%;
-
-      box-shadow: inset -10% -10% 0px rgb(0, 0, 0, 0.1),
-        inset -900px -180px 0px rgb(0, 0, 0, 0.2);
-      border-radius: 0 0 clamp(rem, 10vw, 10rem) 0;
+      border-radius: 0;
     }
     .landing-site__text-wrapper {
-      // border:1px solid red;
-      width: 90vw;
+      width: 90%;
       height: max-content;
       margin-inline: auto;
+      translate: 0 -25%;
+      gap: 0.5rem;
       h1 {
-        font-size: 2rem;
-        color: white;
-        width: 100%;
-        font-family: Arial, Helvetica, sans-serif;
+        @include headingText($clr-font-l);
+        position: relative;
+        letter-spacing: 0.05em;
       }
-      p {
-        color: white;
-
-        font-family: Arial, Helvetica, sans-serif;
+      .landing-site__list-text {
+        @include small-text($clr-font-l);
         font-weight: 300;
+        opacity: $opacity-l;
+        width: 100%;
+        margin-inline: auto;
+
+        li {
+          margin-left: -2.5rem;
+          width: 100%;
+          opacity: 0.9;
+        }
+      }
+      .btn-default {
+        align-self: center;
       }
     }
   }
@@ -216,35 +220,29 @@
     left: $left;
   }
   .svg-wrapper {
-    // height: 95%;
-    // width: 3rem;
     position: relative;
-    // border: 1px solid blue;
-
     .cloud {
       @include cloudPos(0, 0);
-
       width: 10rem;
+      animation: stop;
     }
     .c-1 {
       fill: hsla(142, 100%, 100%, 0.3);
       @include cloudPos(-5%, 0);
-      height: 50%;
-      translate: 0% 0%;
-      animation: stop;
+      height: 30%;
+      translate: 30% 15%;
     }
     .c-2 {
       fill: hsl(0, 0%, 100%, 0.6);
       @include cloudPos(10%, 0);
-      height: 70%;
-      translate: 20% 0%;
-      animation: stop;
+      height: 100%;
+      translate: 30% -20%;
     }
     .c-3 {
       fill: hsl(0, 0%, 90%, 0.4);
       @include cloudPos(5%, 0);
-      translate: -20% 0%;
-      animation: stop;
+      height: 100%;
+      translate: -20% -25%;
     }
   }
 

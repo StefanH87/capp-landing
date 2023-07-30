@@ -13,16 +13,17 @@
   #about-page {
     background: linear-gradient(to bottom, $primary-dark, $primary-light);
     width: 100vw;
-    height: 110vh;
+    height: 140vh;
     .about-page__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       margin-inline: auto;
-      margin-left: 1%;
+
+      padding-left: 1rem;
       border-radius: 100px 0 0 100px;
-      width: 99%;
-      height: 110vh;
-      background: $bg-clr;
+      width: 100%;
+      height: inherit;
+      background: linear-gradient(to left, $bg-clr-d -120%, $secondary-light);
       .about-page_team-heading {
         grid-column: 1/-1;
         height: 40%;

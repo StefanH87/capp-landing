@@ -131,12 +131,12 @@ $font-weights: (
 );
 
 $font-sizes: (
-  "big-text": clamp(3rem, 10vw, 5rem),
-  "header-big": clamp(3rem, 10vw, 5rem),
-  "header-small": clamp(1rem, 10vw, 3rem),
-  "subheading": clamp(1.2rem, 10vw, 2rem),
-  "subheading-small": clamp(1rem, 10vw, 1.5rem),
-  "default-text": clamp(0.9rem, 10vw, 1.1rem),
+  "big-text": clamp(2.5rem, 6vw, 4em),
+  "header-big": clamp(3rem, 6vw, 5rem),
+  "header-small": clamp(1rem, 6vw, 3rem),
+  "subheading": clamp(1.2rem, 6vw, 2rem),
+  "subheading-small": clamp(1rem, 6vw, 1.5rem),
+  "default-text": clamp(0.9rem, 6vw, 1.1rem),
   "button-text": clamp(0.7rem, 1rem + 1vw, 1.5rem),
 );
 //
@@ -144,6 +144,7 @@ $font-sizes: (
 $font-size-def: 1rem;
 
 //padding
+$padd-xs: math.div(0.5rem, 2);
 $padd-small: math.div(1rem, 2);
 $padd-def: $font-size-def;
 $padd-med: $font-size-def * 1.5;

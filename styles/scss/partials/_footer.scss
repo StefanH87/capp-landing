@@ -4,16 +4,17 @@ footer {
   height: 10vh;
   width: 100vw;
 
-  & :is(a, p) {
+  & :is(p) {
     @include small-text($clr-font-l);
     padding-bottom: $marg-small;
   }
   & :is(a) {
     border-bottom: 2px solid transparent;
+    @include small-text($github-clr);
 
     &:hover {
-      color: $a-hover;
-      border-color: $a-hover;
+      color: $footer-a-h;
+      border-color: $footer-a-h;
     }
     &:active {
       color: $clr-font-m;
