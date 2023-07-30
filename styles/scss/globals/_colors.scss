@@ -1,18 +1,34 @@
 $primary-dark: hsl(141, 45%, 38%);
 $primary-mid: hsl(141, 45%, 48%);
 $primary-light: hsl(141, 45%, 56%);
-$primary-light-s: hsl(141, 48%, 70%);
+$primary-light-s: hsl(141, 48%, 62%);
 $secondary-dark: hsl(0, 0%, 96%);
 $secondary-light: hsl(0, 0%, 99%);
 $bg-clr: hsl(0, 0%, 94%);
 $accent-color: hwb(43 4% 8%);
+
+//clouds
+$cloud-trans: 0.1;
+$cloud-s: hsl(0, 0%, 100%, $cloud-trans);
+$cloud-m: hsl(0, 0%, 100%, $cloud-trans + 0.1);
+$cloud-l: hsl(0, 0%, 100%, $cloud-trans + 0.3);
+
+//link
+$link-bg: hsl(0, 0%, 99%, 0.08);
+
 //fonts
 
 $clr-font-l: #ededed;
 $clr-font-m: #8b8b8b;
 $clr-font-d: #202020;
+
+$btn-color__mainpage: $primary-light;
+$btn-font: $clr-font-l;
+
 // a hover
 $a-hover: $primary-light-s;
 //clr-border
 $clr-brd: $primary-dark;
 $clr-brd-light: $secondary-light;
+
+$brd-s: 1px solid;

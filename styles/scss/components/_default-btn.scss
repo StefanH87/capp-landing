@@ -1,45 +1,64 @@
 .btn-default {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  font-size: 5rem;
-  color: red;
+  @include flexBasis(row, center, center);
+  $btn-color: $btn-color__mainpage;
   all: unset;
   cursor: pointer;
-  border: 2px solid $primary-mid;
+  border: 3px solid $btn-color;
   position: relative;
-  width: 4rem;
-  height: 2rem;
-  padding-inline: 10%;
-  padding-block: 0.5rem;
-  border-radius: 1rem;
+  width: 17vw;
+  height: max-content;
+  padding-inline: $padd-def;
+  padding-block: $padd-def;
+  border-radius: $brd-rad-def;
   position: relative;
-  transition: width 0.3s ease-in-out;
+  transition: padding-inline 0.3s ease-in-out;
+  @media screen and (max-width: 400px) {
+    width: 40vw;
+  }
+  @media screen and (min-width: 400px) {
+    width: 35vw;
+  }
+  @media screen and (min-width: 600px) {
+    width: 28vw;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 17vw;
+  }
+  .btn-default_text {
+    text-align: center;
+    @include buttonText($btn-color);
+    padding: 0;
+    padding-block: 0.3rem;
+    width: 100%;
+    height: max-content;
+  }
   &:active {
-    border-color: red;
+    border-color: $btn-color;
+    background: $btn-color;
+
+    & .btn-default_text {
+      color: $btn-font;
+    }
     svg {
       translate: 50% 0;
       opacity: 1;
     }
   }
   &:hover {
-    width: 5rem;
+    padding-inline: $padd-def calc($marg-big + 0.5rem);
     svg {
       translate: 50% 0;
       opacity: 1;
     }
   }
-  p {
-    font-size: 0.5rem;
-    color: $primary-mid;
-  }
+
   svg {
     width: 2rem;
     position: absolute;
     top: 0;
-    left: 60%;
+    right: 25px;
     transition: translate 0.3s ease-in-out, opacity 0.2s ease-in-out;
     opacity: 0;
-    fill: $primary-mid;
+    fill: $btn-color;
   }
 }
