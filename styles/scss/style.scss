@@ -1,5 +1,5 @@
 @import "globals/index";
-
+@import "components/switch-btn";
 @import "components/default-btn";
 @import "components/header";
 @import "components/user-cards";
@@ -22,5 +22,11 @@ html.theme-transition,
 html.theme-transition *,
 html.theme-transition::before,
 html.theme-transition::after {
-  transition: color 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.test {
+  width: 100vw;
+  height: max-content;
+  overflow: hidden;
 }

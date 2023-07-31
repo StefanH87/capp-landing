@@ -47,7 +47,7 @@
   h2 {
     border-bottom: 2px solid $primary-light;
     padding-block: 1rem;
-    @include subheading($clr-font-d);
+    @include subheading($clr-font-m);
     width: 100%;
     align-self: start;
     text-align: center;

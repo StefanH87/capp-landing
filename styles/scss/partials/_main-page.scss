@@ -53,7 +53,7 @@
   height: 100%;
 
   h2 {
-    @include headingText($clr-font-l);
+    @include headingText($font-clr-main-mob);
     text-transform: uppercase;
     position: relative;
     display: inline-flex;
@@ -70,14 +70,14 @@
       bottom: 0;
       top: 100%;
       height: 0.5rem;
-      background: linear-gradient(to right, $clr-font-l, transparent);
+      background: linear-gradient(to right, $font-clr-main-mob, transparent);
       width: 80%;
       border-radius: 1rem;
       transition: 0.3s ease-in;
     }
   }
   p {
-    @include subheading($clr-font-l);
+    @include subheading($font-clr-main-mob);
     width: 100%;
     padding-block: 3vh;
   }
@@ -171,7 +171,7 @@
     margin-inline: auto;
     height: auto;
     &:hover h2::after {
-      background: linear-gradient(to right, $primary-mid, transparent);
+      background: linear-gradient(to right, $clr-h-brd, transparent);
       width: 28vw;
     }
 

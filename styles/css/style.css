@@ -52,9 +52,16 @@ html {
   --font-m: hsl(0, 0%, 55%);
   --font-d: hsl(0, 0%, 13%);
   --git-clr: hsl(0, 0%, 20%, 0.6);
+  --clr-font-main: hsl(0, 0%, 13%, 0.5);
+  --clr-font-mob: hsl(0, 0%, 93%, 0.8);
   --shd-dark: hsla(0, 0%, 0%, 0.8);
   --shd-light: hsla(0, 0%, 0%, 0.3);
   --btn-green: var(--prime-mid);
+  --btn-mobile: var(--sec-light);
+  --grid-clr-l: var(--sec-light);
+  --grid-clr-d: var(--bg-dark);
+  --clr-h-brd: var(--prime-mid);
+  --clr-h-brd-white: var(--sec-light);
 }
 
 html[data-theme=dark] {
@@ -75,9 +82,16 @@ html[data-theme=dark] {
   --font-m: hsl(0, 0%, 55%);
   --font-d: hsl(0, 0%, 13%);
   --git-clr: var(--btn-green);
+  --clr-font-main: var(--font-l);
+  --clr-font-mob: var(--font-l);
   --shd-dark: hsla(0, 0%, 0%, 0.8);
   --shd-light: hsla(0, 0%, 0%, 0.3);
   --btn-green: hsl(141, 45%, 48%);
+  --btn-mobile: hsl(141, 45%, 48%);
+  --grid-clr-l: var(--bg-dark);
+  --grid-clr-d: var(--bg-dark);
+  --clr-h-brd: var(--btn-green);
+  --clr-h-brd-white: var(--btn-green);
 }
 
 h1,
@@ -144,6 +158,80 @@ button {
   all: unset;
 }
 
+.header__theme-btn-wrapper {
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  height: 100%;
+  display: block;
+  top: 30%;
+  left: -15%;
+  translate: -50% -50%;
+  background: blue;
+}
+
+.header__theme-btn-wrapper .header__theme-btn {
+  all: unset;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% 0;
+  display: block;
+  width: 50px;
+  height: 1.5rem;
+  border-radius: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.header__theme-btn-wrapper .header__theme-btn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  translate: 2px -50%;
+  background: var(--font-l);
+  height: 90%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  transition: translate 0.2s ease-in-out;
+}
+
+.header__theme-btn-wrapper .header__theme-btn:checked::after {
+  translate: 27px -50%;
+}
+
+@media screen and (min-width: 700px) {
+  header .links-header-holder .header__theme-btn {
+    all: unset;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 25;
+    translate: 90vw -290%;
+    display: block;
+    width: 50px;
+    height: 1.5rem;
+    border-radius: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  header .links-header-holder .header__theme-btn::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 0;
+    translate: 2px -50%;
+    background: var(--font-l);
+    height: 90%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    transition: translate 0.2s ease-in-out;
+  }
+  header .links-header-holder .header__theme-btn:checked::after {
+    translate: 27px -50%;
+  }
+}
 .btn-default {
   display: flex;
   flex-direction: row;
@@ -229,7 +317,7 @@ button {
 }
 
 /*=====================================================*/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   header {
     display: block;
     width: 100vw;
@@ -253,7 +341,7 @@ button {
     margin-block: auto;
     text-align: center;
     font-size: 1.6rem;
-    color: var(--font-l);
+    color: transparent;
   }
   header .links-header-holder {
     padding-inline: 0;
@@ -348,7 +436,7 @@ button {
   height: 4px;
   border-radius: 2rem;
   width: 100%;
-  background: var(--sec-dark);
+  background: var(--font-l);
   transition: width 0.2s ease-in-out;
 }
 
@@ -382,7 +470,7 @@ button {
 }
 
 #nav-btn:checked + label span {
-  background: var --prime-mid;
+  background: var(--btn-green);
 }
 
 #nav-btn:checked + label span.ham-menue__1 {
@@ -390,7 +478,7 @@ button {
   align-self: end;
 }
 
-#nav-btn:checked + label span.ham-menue__2 {
+#nav-btn:checked + label span.hams-menue__2 {
   width: 60%;
   align-self: end;
 }
@@ -402,7 +490,7 @@ button {
 
 /*=================================================================*/
 /*=================================================================*/
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   header {
     display: block;
     width: 100vw;
@@ -436,6 +524,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    position: relative;
   }
   header .links-header-holder .nav-link__wrapper li {
     display: inline-flex;
@@ -473,7 +562,7 @@ button {
     height: 80px;
   }
   .header-scrolled:hover {
-    background: hsla(141, 45%, 48%, 0.4);
+    background: hsl(141, 45%, 48%);
   }
 }
 .user-comm__wrapper {
@@ -536,7 +625,7 @@ button {
   padding-block: 1rem;
   font-size: clamp(1.2rem, 6vw, 2rem);
   font-weight: 300;
-  color: var(--font-d);
+  color: var(--font-m);
   width: 100%;
   align-self: start;
   text-align: center;
@@ -719,7 +808,7 @@ button {
   top: 100%;
   height: 0.5rem;
   border-radius: 1rem;
-  -image: linear-gradient(to right, var(--font-l), transparent);
+  background-image: linear-gradient(to right, var(--clr-h-brd-white), transparent);
   width: calc(18rem + 10vw);
 }
 
@@ -1013,7 +1102,7 @@ button {
 .mp-holder__text h2 {
   font-size: clamp(2.5rem, 6vw, 4em);
   font-weight: 700;
-  color: var(--font-l);
+  color: var(--clr-font-mob);
   text-transform: uppercase;
   position: relative;
   display: inline-flex;
@@ -1031,7 +1120,7 @@ button {
   bottom: 0;
   top: 100%;
   height: 0.5rem;
-  background: linear-gradient(to right, var(--font-l), transparent);
+  background: linear-gradient(to right, var(--clr-font-mob), transparent);
   width: 80%;
   border-radius: 1rem;
   transition: 0.3s ease-in;
@@ -1040,14 +1129,14 @@ button {
 .mp-holder__text p {
   font-size: clamp(1.2rem, 6vw, 2rem);
   font-weight: 300;
-  color: var(--font-l);
+  color: var(--clr-font-mob);
   width: 100%;
   padding-block: 3vh;
 }
 
 .mp-holder__text .btn-default {
   align-self: center;
-  border-color: var(--sec-light);
+  border-color: var(--btn-mobile);
 }
 
 @media screen and (min-width: 900px) {
@@ -1056,11 +1145,11 @@ button {
   }
 }
 .mp-holder__text .btn-default .btn-default_text {
-  color: var(--sec-light);
+  color: var(--btn-mobile);
 }
 
 .mp-holder__text .btn-default svg {
-  fill: var(--sec-light);
+  fill: var(--btn-mobile);
 }
 
 .mp-holder__svg {
@@ -1154,7 +1243,7 @@ button {
     height: auto;
   }
   .mp-holder__text:hover h2::after {
-    background: linear-gradient(to right, var --prime-mid, transparent);
+    background: linear-gradient(to right, var(--clr-h-brd), transparent);
     width: 28vw;
   }
   .mp-holder__text h2 {
@@ -1360,8 +1449,9 @@ article:hover .user-2 {
   color: var(--font-l);
   font-weight: 600;
   text-transform: uppercase;
-  text-align: start;
+  text-align: center;
   width: 90%;
+  padding-bottom: 0.5rem;
   opacity: 0.5;
   margin-inline: auto;
   position: relative;
@@ -1378,8 +1468,8 @@ article:hover .user-2 {
   position: absolute;
   display: block;
   height: 0.5rem;
-  background: linear-gradient(to right, var(--sec-light), transparent);
-  width: 35vw;
+  background: linear-gradient(to right, var(--clr-h-brd-white), transparent);
+  width: 95vw;
   border-radius: 1rem;
   transition: 0.3s ease-in;
 }
@@ -1390,7 +1480,7 @@ article:hover .user-2 {
   color: var(--font-l);
   font-size: 2rem;
   opacity: 0.5;
-  text-align: start;
+  text-align: center;
   width: 90%;
   margin-inline: auto;
   padding-block: 2rem 2rem;
@@ -1404,7 +1494,7 @@ article:hover .user-2 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   gap: 5%;
   padding-bottom: 3rem;
   padding-left: 0.5rem;
@@ -1425,7 +1515,7 @@ article:hover .user-2 {
   width: 4rem;
   height: 4rem;
   fill: var(--sec-light);
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 .device-wrapper__svg {
@@ -1449,6 +1539,7 @@ article:hover .user-2 {
     grid-template-columns: 1fr;
     grid-template-rows: 15% 1fr 15%;
     background: linear-gradient(to bottom, var(--prime-dark), var(--prime-light));
+    margin-top: 2rem;
   }
   .bg-con {
     display: block;
@@ -1493,8 +1584,13 @@ article:hover .user-2 {
     font-weight: 600;
     text-transform: uppercase;
     text-align: left;
+    padding-bottom: 0rem;
     width: 100%;
     position: relative;
+  }
+  .device-page__wrapper .device-holder__text h2::after {
+    content: "";
+    width: 35vw;
   }
   .device-page__wrapper .device-holder__text p {
     font-size: clamp(1.2rem, 6vw, 2rem);
@@ -1547,19 +1643,19 @@ article:hover .user-2 {
   }
   @keyframes puls {
     0% {
-      fill: var(--prime-light);
+      fill: var(--btn-green);
     }
     25% {
       fill: var(--bg-def);
     }
     50% {
-      fill: var(--prime-light);
+      fill: var(--btn-green);
     }
     75% {
       fill: var(--bg-def);
     }
     100% {
-      fill: var(--prime-light);
+      fill: var(--btn-green);
     }
   }
 }
@@ -1577,7 +1673,7 @@ article:hover .user-2 {
   place-content: center;
   overflow: hidden;
   background: var(--bg-def);
-  background: linear-gradient(to right, var(--bg-dark), var(--sec-light));
+  background: linear-gradient(to right, var(--grid-clr-d), var(--grid-clr-l));
   border-radius: 2rem 2rem 0rem 0rem;
   width: 100vw;
   height: 100%;
@@ -1640,7 +1736,7 @@ article:hover .user-2 {
     place-content: center;
     overflow: hidden;
     background: var(--bg-def);
-    background: linear-gradient(to right, var(--bg-dark), var(--sec-light));
+    background: linear-gradient(to right, var(--grid-clr-d), var(--grid-clr-l));
     border-radius: 0 100px 100px 0;
     width: 100%;
     height: 90%;
@@ -1650,7 +1746,7 @@ article:hover .user-2 {
     display: grid;
     place-content: center;
     grid-column: 2/3;
-    width: 95%;
+    width: 90%;
     height: 90%;
   }
   #user-commentar-page .user-commentar_subheading h3 {
@@ -1872,6 +1968,7 @@ article:hover .user-2 {
     width: 89%;
     height: 49%;
     background: none;
+    margin-bottom: -2rem;
   }
   .team-member__wrapper:nth-child(odd) {
     margin-top: 4vw;
@@ -1883,7 +1980,7 @@ article:hover .user-2 {
     transform: rotateY(180deg);
   }
   .team-member__wrapper.team-member__wrapper:hover .team-card__frame .team-card__back .team-card_img {
-    translate: -50% 0px;
+    translate: -50% 0%;
   }
   .team-member__wrapper .team-card__frame {
     display: grid;
@@ -2037,12 +2134,11 @@ article:hover .user-2 {
 
 #about-page .about-page__grid .about-page_team-heading h3 {
   position: relative;
-  opacity: 0.6;
   width: 100%;
   padding-block: 2rem 1rem;
   font-size: clamp(2.5rem, 6vw, 4em);
   font-weight: 700;
-  color: var(--font-l);
+  color: var(--clr-font-main);
 }
 
 #about-page .about-page__grid .about-page_team-heading h3::after {
@@ -2056,7 +2152,7 @@ article:hover .user-2 {
   position: absolute;
   display: block;
   height: 0.5rem;
-  background: linear-gradient(to right, var(--sec-light), transparent);
+  background: linear-gradient(to right, var(--clr-h-brd), transparent);
   width: 80%;
   border-radius: 1rem;
   transition: 0.3s ease-in;
@@ -2069,7 +2165,6 @@ article:hover .user-2 {
   font-size: clamp(1rem, 6vw, 1.5rem);
   font-weight: 300;
   color: var(--font-l);
-  opacity: 0.5;
   border-bottom: 1px solid var(--font-l);
 }
 
@@ -2091,7 +2186,7 @@ article:hover .user-2 {
     border-radius: 100px 0 0 100px;
     width: 100%;
     height: inherit;
-    background: linear-gradient(to left, var(--bg-dark) -120%, var(--sec-light));
+    background: linear-gradient(to right, var(--bg-dark) -120%, var(--bg-def));
   }
   #about-page .about-page__grid .about-page_team-heading {
     grid-column: 1/-1;
@@ -2111,7 +2206,7 @@ article:hover .user-2 {
     width: 30%;
     font-size: clamp(2.5rem, 6vw, 4em);
     font-weight: 700;
-    color: var(--prime-dark);
+    color: var(--clr-font-main);
   }
   #about-page .about-page__grid .about-page_team-heading h3::after {
     content: "";
@@ -2124,7 +2219,7 @@ article:hover .user-2 {
     position: absolute;
     display: block;
     height: 0.5rem;
-    background: linear-gradient(to right, var(--prime-dark), transparent);
+    background: linear-gradient(to right, var(--clr-h-brd), transparent);
     width: 35vw;
     border-radius: 1rem;
     transition: 0.3s ease-in;
@@ -2134,7 +2229,7 @@ article:hover .user-2 {
     line-height: 1.2;
     font-size: clamp(1rem, 6vw, 1.5rem);
     font-weight: 300;
-    color: var(--font-m);
+    color: var(--clr-font-main);
     margin-bottom: 0rem;
   }
 }
@@ -2228,7 +2323,7 @@ footer .footer-content__wrapper ul li {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to leftm, var(--prime-dark), var(--prime-light));
+    background: var(--prime-light);
     height: 10vh;
     width: 1005;
     margin-top: 0rem;
@@ -2306,7 +2401,14 @@ html.theme-transition,
 html.theme-transition *,
 html.theme-transition::before,
 html.theme-transition::after {
-  transition: color 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.test {
+  width: 100vw;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: hidden;
 } 
 
 /*# sourceMappingURL=style.css.map */

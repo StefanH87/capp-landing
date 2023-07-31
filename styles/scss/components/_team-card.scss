@@ -115,7 +115,7 @@
     @include gridMiddle();
     @include boxRectangle(89%, 49%);
     background: none;
-
+    margin-bottom: -2rem;
     &:nth-child(odd) {
       margin-top: 4vw;
     }
@@ -129,7 +129,7 @@
       .team-card__frame
       .team-card__back
       .team-card_img {
-      translate: -50% 0px;
+      translate: -50% 0%;
     }
     .team-card__frame {
       @include gridMiddle();

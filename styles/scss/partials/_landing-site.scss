@@ -39,7 +39,7 @@
         top: 100%;
         height: 0.5rem;
         border-radius: 1rem;
-        -image: linear-gradient(to right, $clr-font-l, transparent);
+        background-image: linear-gradient(to right, $crl-w-brd, transparent);
         width: calc(18rem + 10vw);
       }
     }

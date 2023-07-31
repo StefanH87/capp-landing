@@ -27,17 +27,17 @@
       }
       h3 {
         position: relative;
-        opacity: 0.6;
+
         width: 100%;
         padding-block: 2rem 1rem;
-        @include headingText($clr-font-l);
+        @include headingText($font-clr-main);
         &::after {
           content: "";
           @include absoluteItem(100%, 0, 0, 0, 1);
           position: absolute;
           display: block;
           height: 0.5rem;
-          background: linear-gradient(to right, $secondary-light, transparent);
+          background: linear-gradient(to right, $clr-h-brd, transparent);
           width: 80%;
           border-radius: $brd-rad-def;
           transition: 0.3s ease-in;
@@ -48,7 +48,7 @@
         margin-bottom: 2rem;
         line-height: 1.2;
         @include subheadingSmall($clr-font-l);
-        opacity: 0.5;
+
         border-bottom: 1px solid $clr-font-l;
       }
     }
@@ -71,7 +71,7 @@
       border-radius: 100px 0 0 100px;
       width: 100%;
       height: inherit;
-      background: linear-gradient(to left, $bg-clr-d -120%, $secondary-light);
+      background: linear-gradient(to right, $bg-clr-d -120%, $bg-clr);
       .about-page_team-heading {
         grid-column: 1/-1;
         height: 40%;
@@ -87,14 +87,14 @@
           position: relative;
           padding-block: 3rem 2.5rem;
           width: 30%;
-          @include headingText($primary-dark);
+          @include headingText($font-clr-main);
           &::after {
             content: "";
             @include absoluteItem(100%, 0, 0, 0, 1);
             position: absolute;
             display: block;
             height: 0.5rem;
-            background: linear-gradient(to right, $primary-dark, transparent);
+            background: linear-gradient(to right, $clr-h-brd, transparent);
             width: 35vw;
             border-radius: $brd-rad-def;
             transition: 0.3s ease-in;
@@ -103,7 +103,7 @@
         p {
           padding-bottom: $padd-big;
           line-height: 1.2;
-          @include subheadingSmall($clr-font-m);
+          @include subheadingSmall($font-clr-main);
           margin-bottom: 0rem;
         }
       }

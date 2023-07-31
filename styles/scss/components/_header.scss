@@ -1,5 +1,5 @@
 /*=====================================================*/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   header {
     @include boxRectangle(100vw, 8vh);
     position: fixed;
@@ -13,13 +13,12 @@
 
     .logo-font {
       color: $secondary-dark;
-
       width: max-content;
       height: max-content;
       margin-block: auto;
       text-align: center;
       font-size: 1.6rem;
-      color: $clr-font-l;
+      color: transparent;
     }
 
     .links-header-holder {
@@ -98,7 +97,7 @@
         height: 4px;
         border-radius: 2rem;
         width: 100%;
-        background: $secondary-dark;
+        background: $clr-font-l;
         transition: width 0.2s ease-in-out;
       }
     }
@@ -129,12 +128,12 @@
   }
 }
 #nav-btn:checked + label span {
-  background: $primary-mid;
+  background: $btn-color;
   &.ham-menue__1 {
     width: 70%;
     align-self: end;
   }
-  &.ham-menue__2 {
+  &.hams-menue__2 {
     width: 60%;
     align-self: end;
   }
@@ -143,10 +142,11 @@
     align-self: end;
   }
 }
+
 /*=================================================================*/
 
 /*=================================================================*/
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   header {
     @include boxRectangle(100vw, 80px);
     @include flexBasis(row, center, left);
@@ -172,6 +172,7 @@
       .nav-link__wrapper {
         @include flexBasis(row, center, center);
         gap: 1rem;
+        position: relative;
 
         li {
           display: inline-flex;
@@ -208,7 +209,7 @@
     width: 100vw;
     height: 80px;
     &:hover {
-      background: hsl(141, 45%, 48%, 0.4);
+      background: hsl(141, 45%, 48%, 1);
     }
   }
 }

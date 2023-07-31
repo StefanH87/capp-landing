@@ -60,7 +60,7 @@ footer {
   }
   @media screen and (min-width: 900px) {
     @include flexBasis(row, center, center);
-    background: linear-gradient(to leftm, $primary-dark, $primary-light);
+    background: $primary-light;
     height: 10vh;
     width: 1005;
     margin-top: 0rem;
