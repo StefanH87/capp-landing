@@ -1,12 +1,57 @@
 #about-page {
   background: linear-gradient(to bottom, $primary-dark, $primary-light);
+  border-radius: 2rem 2rem 0 0;
+
   @include boxView();
+  height: max-content;
+  padding-bottom: 5rem;
+
   .about-page__grid {
     display: grid;
     grid-template-columns: 1fr;
     margin-inline: auto;
     width: 90%;
-    height: inherit;
+    height: auto;
+
+    gap: 0rem;
+    .about-page_team-heading {
+      grid-column: 1/-1;
+      height: 40%;
+      display: block;
+      padding-inline: auto;
+      h3,
+      p {
+        width: 100%;
+        margin-inline: auto;
+        text-align: left;
+      }
+      h3 {
+        position: relative;
+        opacity: 0.6;
+        width: 100%;
+        padding-block: 2rem 1rem;
+        @include headingText($clr-font-l);
+        &::after {
+          content: "";
+          @include absoluteItem(100%, 0, 0, 0, 1);
+          position: absolute;
+          display: block;
+          height: 0.5rem;
+          background: linear-gradient(to right, $secondary-light, transparent);
+          width: 80%;
+          border-radius: $brd-rad-def;
+          transition: 0.3s ease-in;
+        }
+      }
+      p {
+        padding-block: $padd-big;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        @include subheadingSmall($clr-font-l);
+        opacity: 0.5;
+        border-bottom: 1px solid $clr-font-l;
+      }
+    }
   }
 }
 @media screen and (min-width: 900px) {
@@ -14,11 +59,13 @@
     background: linear-gradient(to bottom, $primary-dark, $primary-light);
     width: 100vw;
     height: 140vh;
+    border-radius: 0 0 0 0;
+    padding-bottom: 0;
     .about-page__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       margin-inline: auto;
-
+      gap: 2rem;
       padding-left: 1rem;
       border-radius: 100px 0 0 100px;
       width: 100%;
@@ -36,13 +83,27 @@
           text-align: center;
         }
         h3 {
+          position: relative;
           padding-block: 3rem 2.5rem;
+          width: 30%;
           @include headingText($primary-dark);
+          &::after {
+            content: "";
+            @include absoluteItem(100%, 0, 0, 0, 1);
+            position: absolute;
+            display: block;
+            height: 0.5rem;
+            background: linear-gradient(to right, $primary-dark, transparent);
+            width: 35vw;
+            border-radius: $brd-rad-def;
+            transition: 0.3s ease-in;
+          }
         }
         p {
           padding-bottom: $padd-big;
           line-height: 1.2;
           @include subheadingSmall($clr-font-m);
+          margin-bottom: 0rem;
         }
       }
     }

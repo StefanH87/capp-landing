@@ -164,7 +164,7 @@ $brd-rad-m: $brd-rad-def * 2;
 
 $icon-s: 2rem;
 $icon-m: 4rem;
-$icon-l: clamp(2rem, 10vw, 4rem);
+$icon-l: 4rem;
 
 //opacity
 
@@ -173,3 +173,9 @@ $opacity-m: 0.5;
 $opacity-l: 0.7;
 
 $opac-device: $opacity-m;
+
+// User card
+$member-card-s-width: min(100vw, 20rem);
+$member-card-s-height: min(65vh, 25rem);
+$member-card-width: min(100vw, 20rem);
+$member-card-height: min(65vh, 25rem);

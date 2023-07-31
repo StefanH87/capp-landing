@@ -28,6 +28,7 @@ $btn-color: $btn-color__mainpage;
 $btn-color-mobile: $secondary-light;
 $btn-font: $clr-font-l;
 $team-card-shadow: hsla(0, 0%, 0%, 0.3);
+$nav-shadow: hsla(0, 0%, 0%, 0.8);
 // a hover
 $a-hover: $primary-light-s;
 $footer-a-h: hsl(0, 0%, 20%, 0.8);
@@ -36,3 +37,8 @@ $clr-brd: $primary-dark;
 $clr-brd-light: $secondary-light;
 
 $brd-s: 1px solid;
+//opacity
+
+$opacity-s: 0.3;
+$opacity-m: 0.5;
+$opacity-l: 0.9;

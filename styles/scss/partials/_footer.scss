@@ -1,17 +1,26 @@
 footer {
-  @include flexBasis(row, center, space-between);
+  @include flexBasis(column, center, center);
   background: $primary-light;
-  height: 10vh;
+  height: 18vh;
   width: 100vw;
+  margin-top: -3rem;
+
+  box-shadow: 0 0 20px $team-card-shadow;
+  border-radius: $brd-rad-def $brd-rad-def 0 0;
+  .logo-font {
+    margin-bottom: 1rem;
+  }
 
   & :is(p) {
     @include small-text($clr-font-l);
     padding-bottom: $marg-small;
+    font-size: 0.9rem;
   }
   & :is(a) {
     border-bottom: 2px solid transparent;
     @include small-text($github-clr);
-
+    font-size: 1rem;
+    text-align: right;
     &:hover {
       color: $footer-a-h;
       border-color: $footer-a-h;
@@ -25,19 +34,83 @@ footer {
     }
   }
   .footer-content__wrapper {
-    @include flexBasis(row, center, space-between);
+    @include flexBasis(column, center, center);
     margin-inline: auto;
-    width: 95vw;
+    width: 100%;
     padding-top: $padd-small;
     span {
       display: inline-flex;
-      width: 40%;
+      width: 90%;
       gap: $padd-def - 0.4;
       justify-content: center;
+      text-align: left;
     }
     ul {
-      @include flexBasis(row, center, space-between);
+      @include flexBasis(row, center, center);
       gap: $padd-def;
+      width: 80%;
+      margin-inline: auto;
+      li {
+        padding: 0;
+        margin: 0;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+  @media screen and (min-width: 900px) {
+    footer {
+      @include flexBasis(row, center, space-between);
+      background: $primary-light;
+      height: 10vh;
+      width: 100vw;
+      .logo-font {
+        margin-bottom: 0rem;
+      }
+
+      & :is(p) {
+        @include small-text($clr-font-l);
+        padding-bottom: $marg-small;
+      }
+      & :is(a) {
+        border-bottom: 2px solid transparent;
+        @include small-text($github-clr);
+
+        &:hover {
+          color: $footer-a-h;
+          border-color: $footer-a-h;
+        }
+        &:active {
+          color: $clr-font-m;
+        }
+        &:focus {
+          color: $a-hover;
+          border-color: $a-hover;
+        }
+      }
+      .footer-content__wrapper {
+        @include flexBasis(row, center, space-between);
+        margin-inline: auto;
+        width: 95%;
+        padding-top: $padd-small;
+
+        span {
+          display: inline-flex;
+          width: 90%;
+          gap: $padd-def - 0.4;
+          justify-content: center;
+        }
+        ul {
+          @include flexBasis(row, center, center);
+          gap: $padd-def;
+
+          width: 30%;
+          margin-inline: auto;
+          li {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }
