@@ -1,37 +1,93 @@
-$primary-dark: hsl(141, 45%, 38%);
-$primary-mid: hsl(141, 45%, 48%);
-$primary-light: hsl(141, 45%, 56%);
-$primary-light-s: hsl(141, 48%, 62%);
-$secondary-dark: hsl(0, 0%, 96%);
-$secondary-light: hsl(0, 0%, 99%);
-$bg-clr: hsl(0, 0%, 94%);
-$bg-clr-d: hsl(0, 0%, 86%);
-$accent-color: hwb(43 4% 8%);
+html {
+  --prime-dark: hsl(141, 45%, 38%);
+  --prime-mid: hsl(141, 45%, 48%);
+  --prime-light: hsl(141, 45%, 56%);
+  --prime-lightest: hsl(141, 48%, 62%);
+  --sec-light: hsl(0, 0%, 99%);
+  --sec-dark: hsl(0, 0%, 96%);
+  --bg-def: hsl(0, 0%, 94%);
+  --bg-dark: hsl(0, 0%, 86%);
+  --accent-color: hwb(43 4% 8%);
+  //clouds
+  --cloud-light: hsl(0, 0%, 100%, 0.1);
+  --cloud-mid: hsl(0, 0%, 100%, 0.2);
+  --cloud-dark: hsl(0, 0%, 100%, 0.4);
+  //links
+  --clr-link: hsl(0, 0%, 99%, 0.08);
+  //fonts
+  --font-l: hsl(0, 0%, 93%);
+  --font-m: hsl(0, 0%, 55%);
+  --font-d: hsl(0, 0%, 13%);
+  --git-clr: hsl(0, 0%, 20%, 0.6);
+  //shadow
+  --shd-dark: hsla(0, 0%, 0%, 0.8);
+  --shd-light: hsla(0, 0%, 0%, 0.3);
+  //btn
+  --btn-green: var(--prime-mid);
+}
+html[data-theme="dark"] {
+  --prime-dark: hsl(0, 0%, 15%);
+  --prime-mid: hsl(0, 0%, 18%);
+  --prime-light: hsl(0, 0%, 22%);
+  --prime-lightest: hsl(0, 0%, 20%);
+  --sec-light: hsl(0, 0%, 15%);
+  --sec-dark: hsl(0, 0%, 15%);
+  --bg-def: hsl(0, 0%, 10%);
+  --bg-dark: hsl(0, 0%, 7%);
+  --accent-color: hwb(43 4% 8%);
+  //clouds
+  --cloud-light: hsl(0, 0%, 100%, 0.1);
+  --cloud-mid: hsl(0, 0%, 100%, 0.2);
+  --cloud-dark: hsl(0, 0%, 100%, 0.4);
+  //links
+  --clr-link: hsl(0, 0%, 99%, 0.08);
+  //fonts
+  --font-l: hsl(0, 0%, 85%, 0.4);
+  --font-m: hsl(0, 0%, 55%);
+  --font-d: hsl(0, 0%, 13%);
+  --git-clr: var(--btn-green);
+  //shadow
+  --shd-dark: hsla(0, 0%, 0%, 0.8);
+  --shd-light: hsla(0, 0%, 0%, 0.3);
+  //btn color
+  --btn-green: hsl(141, 45%, 48%);
+}
+$primary-dark: var(--prime-dark);
+$primary-mid: var (--prime-mid);
+$primary-light: var(--prime-light);
+$primary-light-s: var(--prime-lightest);
+$secondary-light: var(--sec-light);
+$secondary-dark: var(--sec-dark);
+$bg-clr: var(--bg-def);
+$bg-clr-d: var(--bg-dark);
+$accent-color: var(--accent-color);
 
 //clouds
 $cloud-trans: 0.1;
-$cloud-s: hsl(0, 0%, 100%, $cloud-trans);
-$cloud-m: hsl(0, 0%, 100%, $cloud-trans + 0.1);
-$cloud-l: hsl(0, 0%, 100%, $cloud-trans + 0.3);
+$cloud-s: var(--cloud-light);
+$cloud-m: var(--cloud-mid);
+$cloud-l: var(--cloud-dark);
 
 //link
-$link-bg: hsl(0, 0%, 99%, 0.08);
+$link-bg: var(--clr-link);
 
 //fonts
+$clr-font-l: var(--font-l);
+$clr-font-m: var(--font-m);
+$clr-font-d: var(--font-d);
+$github-clr: var(--git-clr);
 
-$clr-font-l: hsl(0, 0%, 93%);
-$clr-font-m: hsl(0, 0%, 55%);
-$clr-font-d: hsl(0, 0%, 13%);
-$github-clr: hsl(0, 0%, 20%, 0.6);
-$btn-color__mainpage: $primary-light;
+//
+
+$btn-color__mainpage: var(--btn-green);
 $btn-color: $btn-color__mainpage;
 $btn-color-mobile: $secondary-light;
 $btn-font: $clr-font-l;
-$team-card-shadow: hsla(0, 0%, 0%, 0.3);
-$nav-shadow: hsla(0, 0%, 0%, 0.8);
+$team-card-shadow: var(--shd-light);
+$nav-shadow: var(--shd-dark);
 // a hover
 $a-hover: $primary-light-s;
-$footer-a-h: hsl(0, 0%, 20%, 0.8);
+$footer-a-h: var(--shd-light);
 //clr-border
 $clr-brd: $primary-dark;
 $clr-brd-light: $secondary-light;
@@ -39,6 +95,7 @@ $clr-brd-light: $secondary-light;
 $brd-s: 1px solid;
 //opacity
 
-$opacity-s: 0.3;
-$opacity-m: 0.5;
+$opacity-s: 0.5;
+$opacity-m: 0.7;
 $opacity-l: 0.9;
+//clouds

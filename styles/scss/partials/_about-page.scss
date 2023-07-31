@@ -1,7 +1,7 @@
 #about-page {
   background: linear-gradient(to bottom, $primary-dark, $primary-light);
   border-radius: 2rem 2rem 0 0;
-
+  overflow: hidden;
   @include boxView();
   height: max-content;
   padding-bottom: 5rem;
@@ -61,6 +61,7 @@
     height: 140vh;
     border-radius: 0 0 0 0;
     padding-bottom: 0;
+    overflow: hidden;
     .about-page__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

@@ -1,5 +1,5 @@
 .sec__landing-page {
-  background: $bg-clr;
+  -image: $bg-clr;
   overflow: hidden;
   height: 100vh;
   .landing-site__bg {
@@ -8,7 +8,7 @@
     align-items: center;
     width: 90vw;
     height: 90%;
-    background: linear-gradient(to bottom, $primary-dark, $primary-light);
+    background-image: linear-gradient(to bottom, $primary-dark, $primary-light);
     border-radius: 0 0 clamp(10rem, 10vw, 20rem) 0;
     padding-top: 3rem;
   }
@@ -39,7 +39,7 @@
         top: 100%;
         height: 0.5rem;
         border-radius: 1rem;
-        background: linear-gradient(to right, $clr-font-l, transparent);
+        -image: linear-gradient(to right, $clr-font-l, transparent);
         width: calc(18rem + 10vw);
       }
     }
@@ -57,7 +57,7 @@
       }
     }
     .btn-default {
-      background: $primary-light;
+      -image: $primary-light;
       align-self: flex-start;
       margin-left: -0.5rem;
       border: {
@@ -72,7 +72,7 @@
         padding-inline: $padd-def calc($marg-big + 0.5rem);
         box-shadow: inset 10px 10px 20px $primary-dark,
           inset -10px -10px 20px $primary-light-s;
-        background: $primary-mid;
+        -image: $primary-mid;
         .btn-default_text {
           opacity: 0.9;
         }
@@ -123,9 +123,9 @@
   }
   .c-2 {
     fill: $cloud-l;
-    @include cloudPos(10%, -2%);
+    @include cloudPos(10%, -12%);
     height: 60%;
-    translate: 40% 0%;
+    translate: 30% 0%;
     animation: cloud 5s infinite ease-in-out;
   }
   .c-3 {
@@ -227,19 +227,19 @@
       animation: stop;
     }
     .c-1 {
-      fill: hsla(142, 100%, 100%, 0.3);
+      fill: $cloud-s;
       @include cloudPos(-5%, 0);
       height: 30%;
       translate: 30% 15%;
     }
     .c-2 {
-      fill: hsl(0, 0%, 100%, 0.6);
+      fill: $cloud-l;
       @include cloudPos(10%, 0);
       height: 100%;
       translate: 30% -20%;
     }
     .c-3 {
-      fill: hsl(0, 0%, 90%, 0.4);
+      fill: $cloud-m;
       @include cloudPos(5%, 0);
       height: 100%;
       translate: -20% -25%;
@@ -256,6 +256,6 @@
 
     height: auto;
 
-    // background-color: red;
+    // -image-color: red;
   }
 }

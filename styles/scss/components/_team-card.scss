@@ -43,7 +43,7 @@
           margin-inline: inherit;
         }
         p {
-          @include small-text($github-clr);
+          @include small-text($clr-font-m);
           padding-block: $padd-def;
           margin-bottom: $marg-big;
           border: {
@@ -56,7 +56,7 @@
           width: max-content;
           padding-bottom: $padd-small;
           margin-bottom: $marg-def;
-          @include small-text($primary-mid);
+          @include small-text($github-clr);
           border-bottom: 1px solid $primary-mid;
         }
       }
@@ -92,7 +92,7 @@
       }
       p {
         margin-bottom: $marg-def;
-        @include subheadingSmall($primary-mid);
+        @include subheadingSmall($clr-font-m);
 
         letter-spacing: 0.1;
       }

@@ -205,25 +205,10 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     height: 120px;
-
+    width: 100vw;
     height: 80px;
     &:hover {
       background: hsl(141, 45%, 48%, 0.4);
-    }
-  }
-  .header-scrolled {
-    cursor: pointer;
-    background: rgba(248, 248, 248, 0.2);
-    backdrop-filter: blur(4px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    height: 10vh;
-
-    &:hover {
-      background: $primary-dark;
-      &.header-scrolled :has(a) {
-        background: none;
-      }
     }
   }
 }
