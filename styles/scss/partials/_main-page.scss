@@ -111,11 +111,12 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   .main-page__wrapper {
     width: 100vw;
     height: max-content;
     grid-template-columns: 2vw 1fr 2vw;
+   
 
     margin-block: 0;
     margin-top: 4vw;
@@ -176,7 +177,7 @@
     }
 
     h2 {
-      @include headingText($primary-mid);
+      @include headingText($font-clr-main);
 
       font-weight: map-get($font-weights, bold);
       width: 100%;
@@ -197,7 +198,7 @@
       }
     }
     p {
-      @include subheading($primary-mid);
+      @include subheading($font-clr-main);
       width: 100%;
       padding-block: 8vh;
     }

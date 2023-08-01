@@ -19,7 +19,7 @@ html {
   --font-m: hsl(0, 0%, 55%);
   --font-d: hsl(0, 0%, 13%);
   --git-clr: hsl(0, 0%, 20%, 0.6);
-  --clr-font-main: hsl(0, 0%, 13%, 0.5);
+  --clr-font-main: hsl(0, 0%, 13%, 0.6);
   --clr-font-mob: hsl(0, 0%, 93%, 0.8);
   //shadow
   --shd-dark: hsla(0, 0%, 0%, 0.8);
@@ -33,6 +33,10 @@ html {
   //
   --clr-h-brd: var(--prime-mid);
   --clr-h-brd-white: var(--sec-light);
+  //btn landing
+  --light-btn:var(--prime-light);
+  --mid-btn:var(--prime-mid);
+  --dark-btn:hsl(141, 45%, 38%,0.6);
 }
 html[data-theme="dark"] {
   --prime-dark: hsl(0, 0%, 15%);
@@ -69,6 +73,11 @@ html[data-theme="dark"] {
   //
   --clr-h-brd: var(--btn-green);
   --clr-h-brd-white: var(--btn-green);
+  //btn-landing site
+  --light-btn:var(--prime-lightest);
+  --mid-btn:var( --prime-mid);
+  --dark-btn:hsl(0, 0%, 10%,0.2);
+
 }
 $primary-dark: var(--prime-dark);
 $primary-mid: var (--prime-mid);
@@ -105,6 +114,13 @@ $grid-shd-l: var(--grid-clr-l);
 $grid-shd-d: var(--grid-clr-d);
 
 //
+//btn landing site
+
+$btn-light:var(--light-btn);
+$btn-mid:var(--mid-btn);
+$btn-dark:var(--dark-btn);
+
+
 
 $btn-color__mainpage: var(--btn-green);
 $btn-color: $btn-color__mainpage;
@@ -116,8 +132,10 @@ $nav-shadow: var(--shd-dark);
 $a-hover: $primary-light-s;
 $footer-a-h: var(--shd-light);
 //clr-border
-$clr-brd: $primary-dark;
-$clr-brd-light: $secondary-light;
+
+
+$clr-brd: var(--prime-mid);
+$clr-brd-light: var(--sec-light);
 
 $brd-s: 1px solid;
 //opacity

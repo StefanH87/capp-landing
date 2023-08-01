@@ -131,13 +131,13 @@ $font-weights: (
 );
 
 $font-sizes: (
-  "big-text": clamp(2.5rem, 6vw, 4em),
+  "big-text": clamp(2rem, 6vw,4rem),
   "header-big": clamp(3rem, 6vw, 5rem),
-  "header-small": clamp(1rem, 6vw, 3rem),
-  "subheading": clamp(1.2rem, 6vw, 2rem),
+  "header-small": clamp(1rem, 6svw, 6rem),
+  "subheading": clamp(1.1rem, 4vw, 2.3rem),
   "subheading-small": clamp(1rem, 6vw, 1.5rem),
-  "default-text": clamp(0.9rem, 6vw, 1.1rem),
-  "button-text": clamp(0.7rem, 1rem + 1vw, 1.5rem),
+  "default-text": clamp(0.9rem, 3vw, 1.3rem),
+  "button-text": clamp(0.7rem, 4vw, 1.4rem),
 );
 //
 // sizes
@@ -177,7 +177,7 @@ $opac-device: $opacity-m;
 // User card
 $member-card-s-width: min(100vw, 20rem);
 $member-card-s-height: min(65vh, 25rem);
-$member-card-width: min(100vw, 20rem);
-$member-card-height: min(65vh, 25rem);
+$member-card-width: min(100vw, 250px);
+$member-card-height: min(65vh, 300px);
 
 

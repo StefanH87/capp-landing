@@ -53,7 +53,7 @@
   animation: none;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   #user-commentar-page {
     background: linear-gradient(to top, $primary-dark, $primary-light);
     @include boxView();
@@ -62,6 +62,7 @@
     grid-template-rows: auto;
     .user-commentar__grid {
       @include gridMiddle();
+    
       overflow: hidden;
       background: $bg-clr;
       background: linear-gradient(to right, $grid-shd-d, $grid-shd-l);
@@ -80,6 +81,7 @@
         @include headingText($clr-font-l);
         text-align: left;
         margin-block: $padd-small $padd-med;
+        
         text-transform: uppercase;
         opacity: $opac-device;
       }

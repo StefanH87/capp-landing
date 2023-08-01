@@ -1,6 +1,6 @@
 .sec__landing-page {
-  -image: $bg-clr;
-  overflow: hidden;
+  background: $bg-clr;
+ 
   height: 100vh;
   .landing-site__bg {
     display: grid;
@@ -44,9 +44,9 @@
       }
     }
     .landing-site__list-text {
-      @include small-text($clr-font-l);
+      @include subheading($clr-font-l);
       font-weight: 300;
-      opacity: $opacity-l;
+      
       width: 100%;
       margin-inline: auto;
 
@@ -57,22 +57,23 @@
       }
     }
     .btn-default {
-      -image: $primary-light;
+      background: v;
       align-self: flex-start;
       margin-left: -0.5rem;
+      color:$clr-font-l;
       border: {
-        top: $brd-s $primary-light;
-        left: $brd-s $primary-light;
-        right: $brd-s $primary-mid;
-        bottom: $brd-s $primary-mid;
+        top: $brd-s $btn-light;
+        left: $brd-s $btn-light;
+        right: $brd-s $btn-mid;
+        bottom: $brd-s $btn-mid;
       }
-      box-shadow: inset -10px -10px 10px $primary-mid,
-        inset 10px 10px 10px $primary-light-s;
+      box-shadow: inset -10px -10px 10px $btn-mid,
+        inset 10px 10px 10px $btn-light;
       &:hover {
         padding-inline: $padd-def calc($marg-big + 0.5rem);
-        box-shadow: inset 10px 10px 20px $primary-dark,
-          inset -10px -10px 20px $primary-light-s;
-        -image: $primary-mid;
+        box-shadow: inset 10px 10px 20px $btn-dark,
+          inset -10px -10px 20px $btn-light;
+        background: $btn-dark;
         .btn-default_text {
           opacity: 0.9;
         }
@@ -82,7 +83,7 @@
         }
       }
       .btn-default_text {
-        @include buttonText($primary-dark);
+        @include buttonText($clr-font-l);
         opacity: 0.7;
       }
 
@@ -134,8 +135,12 @@
     translate: -30% 0%;
     animation: cloud-2 5s infinite ease-in-out;
   }
+ 
 }
-
+.position-svg{
+  translate:0 0;
+  animation: position 4s infinite ease-in-out;
+}
 .main-svg {
   height: max-content;
   width: 37vw;
@@ -175,6 +180,20 @@
     translate: -30% 0%;
   }
 }
+@keyframes position {
+  0% {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 0% -10%;
+  }
+ 
+
+  100% {
+    translate: 0% 0%;
+  }
+}
+
 
 @media screen and (max-width: 400px) {
   .sec__landing-page {

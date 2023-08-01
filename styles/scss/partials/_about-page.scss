@@ -1,5 +1,5 @@
 #about-page {
-  background: linear-gradient(to bottom, $primary-dark, $primary-light);
+  background: linear-gradient(to top, $primary-dark, $primary-light);
   border-radius: 2rem 2rem 0 0;
   overflow: hidden;
   @include boxView();
@@ -30,14 +30,14 @@
 
         width: 100%;
         padding-block: 2rem 1rem;
-        @include headingText($font-clr-main);
+        @include headingText($font-clr-main-mob);
         &::after {
           content: "";
           @include absoluteItem(100%, 0, 0, 0, 1);
           position: absolute;
           display: block;
           height: 0.5rem;
-          background: linear-gradient(to right, $clr-h-brd, transparent);
+          background: linear-gradient(to right, $font-clr-main-mob, transparent);
           width: 80%;
           border-radius: $brd-rad-def;
           transition: 0.3s ease-in;
@@ -47,14 +47,14 @@
         padding-block: $padd-big;
         margin-bottom: 2rem;
         line-height: 1.2;
-        @include subheadingSmall($clr-font-l);
+        @include subheadingSmall($font-clr-main-mob);
 
         border-bottom: 1px solid $clr-font-l;
       }
     }
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   #about-page {
     background: linear-gradient(to bottom, $primary-dark, $primary-light);
     width: 100vw;
@@ -64,14 +64,15 @@
     overflow: hidden;
     .about-page__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       margin-inline: auto;
-      gap: 2rem;
-      padding-left: 1rem;
+      gap:   5vw;
+      padding-left: calc(1rem + 4vw);
       border-radius: 100px 0 0 100px;
       width: 100%;
       height: inherit;
       background: linear-gradient(to right, $bg-clr-d -120%, $bg-clr);
+    
       .about-page_team-heading {
         grid-column: 1/-1;
         height: 40%;

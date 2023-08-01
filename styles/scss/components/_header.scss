@@ -1,7 +1,7 @@
 /*=====================================================*/
 @media screen and (max-width: 700px) {
   header {
-    @include boxRectangle(100vw, 8vh);
+    @include boxRectangle(100vw, 7vh);
     position: fixed;
     z-index: 5;
     background: hsl(141, 45%, 48%, 0.6);
@@ -63,7 +63,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            color: $primary-dark;
+            color: $font-clr-main;
             &:active {
               color: $github-clr;
             }
@@ -112,15 +112,15 @@
     margin-left: -2rem;
     &:nth-child(1) {
       transition-delay: 0.8s;
-      border-bottom: 1px solid $bg-clr-d;
+      border-bottom: 1px solid $font-clr-main;
     }
     &:nth-child(2) {
       transition-delay: 0.6s;
-      border-bottom: 1px solid $bg-clr-d;
+      border-bottom: 1px solid $font-clr-main;
     }
     &:nth-child(3) {
       transition-delay: 0.4s;
-      border-bottom: 1px solid $bg-clr-d;
+      border-bottom: 1px solid $font-clr-main;
     }
     &:nth-child(4) {
       transition-delay: 0.2s;
@@ -161,6 +161,7 @@
       margin-inline: 3.5vw 1vw;
     }
     .links-header-holder {
+      margin-block:1rem;
       .nav-btn__wrapper {
         input[type="checkbox"] {
           display: none;
@@ -180,7 +181,7 @@
           padding-inline: 1rem;
           padding-block: 2rem 0.5rem;
           margin-bottom: 1.5rem;
-          background: $link-bg;
+         
           border-radius: 0 0 1rem 1rem;
           &:hover {
             border-bottom: 1px solid $clr-font-l;
@@ -207,7 +208,7 @@
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     height: 120px;
     width: 100vw;
-    height: 80px;
+    height: 8.5vh;
     &:hover {
       background: hsl(141, 45%, 48%, 1);
     }

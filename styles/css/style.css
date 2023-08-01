@@ -52,7 +52,7 @@ html {
   --font-m: hsl(0, 0%, 55%);
   --font-d: hsl(0, 0%, 13%);
   --git-clr: hsl(0, 0%, 20%, 0.6);
-  --clr-font-main: hsl(0, 0%, 13%, 0.5);
+  --clr-font-main: hsl(0, 0%, 13%, 0.6);
   --clr-font-mob: hsl(0, 0%, 93%, 0.8);
   --shd-dark: hsla(0, 0%, 0%, 0.8);
   --shd-light: hsla(0, 0%, 0%, 0.3);
@@ -62,6 +62,9 @@ html {
   --grid-clr-d: var(--bg-dark);
   --clr-h-brd: var(--prime-mid);
   --clr-h-brd-white: var(--sec-light);
+  --light-btn:var(--prime-light);
+  --mid-btn:var(--prime-mid);
+  --dark-btn:hsl(141, 45%, 38%,0.6);
 }
 
 html[data-theme=dark] {
@@ -92,6 +95,9 @@ html[data-theme=dark] {
   --grid-clr-d: var(--bg-dark);
   --clr-h-brd: var(--btn-green);
   --clr-h-brd-white: var(--btn-green);
+  --light-btn:var(--prime-lightest);
+  --mid-btn:var( --prime-mid);
+  --dark-btn:hsl(0, 0%, 10%,0.2);
 }
 
 h1,
@@ -273,7 +279,7 @@ button {
 }
 .btn-default .btn-default_text {
   text-align: center;
-  font-size: clamp(0.7rem, 1rem + 1vw, 1.5rem);
+  font-size: clamp(0.7rem, 4vw, 1.4rem);
   font-weight: 300;
   color: var(--btn-green);
   padding: 0;
@@ -321,7 +327,7 @@ button {
   header {
     display: block;
     width: 100vw;
-    height: 8vh;
+    height: 7vh;
     position: fixed;
     z-index: 5;
     background: hsla(141, 45%, 48%, 0.6);
@@ -395,7 +401,7 @@ button {
     text-align: center;
     margin: 0;
     padding: 0;
-    color: var(--prime-dark);
+    color: var(--clr-font-main);
   }
   header .links-header-holder .nav-link__wrapper li a:active {
     color: var(--git-clr);
@@ -452,17 +458,17 @@ button {
 
 #nav-btn:checked ~ ul li:nth-child(1) {
   transition-delay: 0.8s;
-  border-bottom: 1px solid var(--bg-dark);
+  border-bottom: 1px solid var(--clr-font-main);
 }
 
 #nav-btn:checked ~ ul li:nth-child(2) {
   transition-delay: 0.6s;
-  border-bottom: 1px solid var(--bg-dark);
+  border-bottom: 1px solid var(--clr-font-main);
 }
 
 #nav-btn:checked ~ ul li:nth-child(3) {
   transition-delay: 0.4s;
-  border-bottom: 1px solid var(--bg-dark);
+  border-bottom: 1px solid var(--clr-font-main);
 }
 
 #nav-btn:checked ~ ul li:nth-child(4) {
@@ -512,6 +518,9 @@ button {
     width: max-content;
     margin-inline: 3.5vw 1vw;
   }
+  header .links-header-holder {
+    margin-block: 1rem;
+  }
   header .links-header-holder .nav-btn__wrapper input[type=checkbox] {
     display: none;
   }
@@ -532,7 +541,6 @@ button {
     padding-inline: 1rem;
     padding-block: 2rem 0.5rem;
     margin-bottom: 1.5rem;
-    background: var(--clr-link);
     border-radius: 0 0 1rem 1rem;
   }
   header .links-header-holder .nav-link__wrapper li:hover {
@@ -543,7 +551,7 @@ button {
   }
   header .links-header-holder .nav-link__wrapper li a {
     text-decoration: none;
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--font-l);
     width: -moz-max-content;
@@ -559,7 +567,7 @@ button {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     height: 120px;
     width: 100vw;
-    height: 80px;
+    height: 8.5vh;
   }
   .header-scrolled:hover {
     background: hsl(141, 45%, 48%);
@@ -574,7 +582,7 @@ button {
   height: 95%;
   border-radius: 2rem;
   margin-inline: auto;
-  background: var(--prime-dark);
+  background: var(--prime-mid);
   border-top: none;
   border-right: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0);
@@ -600,8 +608,8 @@ button {
   height: 17rem;
   background: var(--sec-light);
   border-radius: 2rem 2rem 0rem 0rem;
-  border-left: 4px solid var(--prime-dark);
-  border-top: 5px solid var(--prime-dark);
+  border-left: 4px solid var(--prime-mid);
+  border-top: 5px solid var(--prime-mid);
   display: grid;
   place-content: center;
 }
@@ -623,7 +631,7 @@ button {
 .user-comm__text h2 {
   border-bottom: 2px solid var(--prime-light);
   padding-block: 1rem;
-  font-size: clamp(1.2rem, 6vw, 2rem);
+  font-size: clamp(1.1rem, 4vw, 2.3rem);
   font-weight: 300;
   color: var(--font-m);
   width: 100%;
@@ -632,7 +640,7 @@ button {
 }
 
 .user-comm__text p {
-  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
   font-weight: 300;
   color: var(--font-m);
   width: 100%;
@@ -652,11 +660,11 @@ button {
   bottom: 0;
   left: 0;
   padding: 0;
-  margin-top: 1.4rem;
+  margin-top: 6rem;
   padding-block: 1rem;
   gap: 0.3rem;
   background: var(--sec-light);
-  border: 5px solid var(--prime-dark);
+  border: 5px solid var(--prime-mid);
   border-radius: 2rem;
 }
 
@@ -672,10 +680,12 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    width: min(75vw, 300px);
-    height: 100%;
+    width: min(75vw, 350px);
+    height: -moz-max-content;
+    height: max-content;
     border-radius: 2rem;
-    background: linear-gradient(to right, var(--prime-dark) 60%, var(--sec-light) 50%);
+    background: linear-gradient(to right, var(--prime-mid) 60%, var(--sec-light) 50%);
+    margin-inline: 2vw;
     border-top: 1px solid var(--sec-light);
     border-right: 2px solid var(--sec-light);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
@@ -699,8 +709,8 @@ button {
     height: 17rem;
     background: var(--sec-light);
     border-radius: 2rem 2rem 2rem 3rem;
-    border-left: 4px solid var(--prime-dark);
-    border-top: 5px solid var(--prime-dark);
+    border-left: 4px solid var(--prime-mid);
+    border-top: 5px solid var(--prime-mid);
     display: grid;
     place-content: center;
   }
@@ -721,15 +731,15 @@ button {
   .user-comm__text h2 {
     border-bottom: 2px solid var(--prime-light);
     padding-block: 1rem;
-    font-size: clamp(1.2rem, 6vw, 2rem);
+    font-size: clamp(1.1rem, 4vw, 2.3rem);
     font-weight: 300;
-    color: var(--font-d);
+    color: --clr-font-main;
     width: 100%;
     align-self: start;
     text-align: center;
   }
   .user-comm__text p {
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--font-m);
     width: 100%;
@@ -750,7 +760,7 @@ button {
     padding: 0.5rem;
     gap: 0.3rem;
     background: var(--sec-light);
-    border: 5px solid var(--prime-dark);
+    border: 5px solid var(--prime-mid);
     border-radius: 3rem 3rem 3rem 3rem;
   }
   .car-icons svg {
@@ -760,8 +770,7 @@ button {
   }
 }
 .sec__landing-page {
-  -image: var(--bg-def);
-  overflow: hidden;
+  background: var(--bg-def);
   height: 100vh;
 }
 
@@ -788,7 +797,7 @@ button {
 }
 
 .sec__landing-page .landing-site__text-wrapper h1 {
-  font-size: clamp(2.5rem, 6vw, 4em);
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   color: var(--font-l);
   opacity: 0.7;
@@ -813,11 +822,10 @@ button {
 }
 
 .sec__landing-page .landing-site__text-wrapper .landing-site__list-text {
-  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  font-size: clamp(1.1rem, 4vw, 2.3rem);
   font-weight: 300;
   color: var(--font-l);
   font-weight: 300;
-  opacity: 0.7;
   width: 100%;
   margin-inline: auto;
 }
@@ -829,20 +837,21 @@ button {
 }
 
 .sec__landing-page .landing-site__text-wrapper .btn-default {
-  -image: var(--prime-light);
+  background: v;
   align-self: flex-start;
   margin-left: -0.5rem;
-  border-top: 1px solid var(--prime-light);
-  border-left: 1px solid var(--prime-light);
-  border-right: 1px solid var --prime-mid;
-  border-bottom: 1px solid var --prime-mid;
-  box-shadow: inset -10px -10px 10px var --prime-mid, inset 10px 10px 10px var(--prime-lightest);
+  color: var(--font-l);
+  border-top: 1px solid var(--light-btn);
+  border-left: 1px solid var(--light-btn);
+  border-right: 1px solid var(--mid-btn);
+  border-bottom: 1px solid var(--mid-btn);
+  box-shadow: inset -10px -10px 10px var(--mid-btn), inset 10px 10px 10px var(--light-btn);
 }
 
 .sec__landing-page .landing-site__text-wrapper .btn-default:hover {
   padding-inline: 1rem 2.5rem;
-  box-shadow: inset 10px 10px 20px var(--prime-dark), inset -10px -10px 20px var(--prime-lightest);
-  -image: var --prime-mid;
+  box-shadow: inset 10px 10px 20px var(--dark-btn), inset -10px -10px 20px var(--light-btn);
+  background: var(--dark-btn);
 }
 
 .sec__landing-page .landing-site__text-wrapper .btn-default:hover .btn-default_text {
@@ -855,9 +864,9 @@ button {
 }
 
 .sec__landing-page .landing-site__text-wrapper .btn-default .btn-default_text {
-  font-size: clamp(0.7rem, 1rem + 1vw, 1.5rem);
+  font-size: clamp(0.7rem, 4vw, 1.4rem);
   font-weight: 300;
-  color: var(--prime-dark);
+  color: var(--font-l);
   opacity: 0.7;
 }
 
@@ -911,6 +920,11 @@ button {
   animation: cloud-2 5s infinite ease-in-out;
 }
 
+.position-svg {
+  translate: 0 0;
+  animation: position 4s infinite ease-in-out;
+}
+
 .main-svg {
   height: -moz-max-content;
   height: max-content;
@@ -948,6 +962,17 @@ button {
     translate: -30% 0%;
   }
 }
+@keyframes position {
+  0% {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 0% -10%;
+  }
+  100% {
+    translate: 0% 0%;
+  }
+}
 @media screen and (max-width: 400px) {
   .sec__landing-page .landing-site__bg {
     display: flex;
@@ -967,14 +992,14 @@ button {
     gap: 0.5rem;
   }
   .sec__landing-page .landing-site__text-wrapper h1 {
-    font-size: clamp(2.5rem, 6vw, 4em);
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 700;
     color: var(--font-l);
     position: relative;
     letter-spacing: 0.05em;
   }
   .sec__landing-page .landing-site__text-wrapper .landing-site__list-text {
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--font-l);
     font-weight: 300;
@@ -1100,7 +1125,7 @@ button {
 }
 
 .mp-holder__text h2 {
-  font-size: clamp(2.5rem, 6vw, 4em);
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   color: var(--clr-font-mob);
   text-transform: uppercase;
@@ -1127,7 +1152,7 @@ button {
 }
 
 .mp-holder__text p {
-  font-size: clamp(1.2rem, 6vw, 2rem);
+  font-size: clamp(1.1rem, 4vw, 2.3rem);
   font-weight: 300;
   color: var(--clr-font-mob);
   width: 100%;
@@ -1167,7 +1192,7 @@ button {
   height: max-content;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   .main-page__wrapper {
     width: 100vw;
     height: -moz-max-content;
@@ -1247,9 +1272,9 @@ button {
     width: 28vw;
   }
   .mp-holder__text h2 {
-    font-size: clamp(2.5rem, 6vw, 4em);
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 700;
-    color: var --prime-mid;
+    color: var(--clr-font-main);
     font-weight: 700;
     width: 100%;
     margin-inline: auto;
@@ -1268,9 +1293,9 @@ button {
     transition: 0.3s ease-in;
   }
   .mp-holder__text p {
-    font-size: clamp(1.2rem, 6vw, 2rem);
+    font-size: clamp(1.1rem, 4vw, 2.3rem);
     font-weight: 300;
-    color: var --prime-mid;
+    color: var(--clr-font-main);
     width: 100%;
     padding-block: 8vh;
   }
@@ -1444,7 +1469,7 @@ article:hover .user-2 {
 }
 
 .device-page__wrapper .device-holder__text h2 {
-  font-size: clamp(2.5rem, 6vw, 4em);
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   color: var(--font-l);
   font-weight: 600;
@@ -1475,7 +1500,7 @@ article:hover .user-2 {
 }
 
 .device-page__wrapper .device-holder__text p {
-  font-size: clamp(1rem, 6vw, 3rem);
+  font-size: clamp(1rem, 6svw, 6rem);
   font-weight: 400;
   color: var(--font-l);
   font-size: 2rem;
@@ -1578,7 +1603,7 @@ article:hover .user-2 {
     margin-top: -5rem;
   }
   .device-page__wrapper .device-holder__text h2 {
-    font-size: clamp(2.5rem, 6vw, 4em);
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 700;
     color: var(--font-l);
     font-weight: 600;
@@ -1593,7 +1618,7 @@ article:hover .user-2 {
     width: 35vw;
   }
   .device-page__wrapper .device-holder__text p {
-    font-size: clamp(1.2rem, 6vw, 2rem);
+    font-size: clamp(1.1rem, 4vw, 2.3rem);
     font-weight: 300;
     color: var(--font-l);
     text-align: start;
@@ -1691,7 +1716,7 @@ article:hover .user-2 {
 }
 
 #user-commentar-page .user-commentar_subheading h3 {
-  font-size: clamp(2.5rem, 6vw, 4em);
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   color: var(--font-l);
   text-align: left;
@@ -1722,7 +1747,7 @@ article:hover .user-2 {
   animation: none;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   #user-commentar-page {
     background: linear-gradient(to top, var(--prime-dark), var(--prime-light));
     width: 100vw;
@@ -1750,7 +1775,7 @@ article:hover .user-2 {
     height: 90%;
   }
   #user-commentar-page .user-commentar_subheading h3 {
-    font-size: clamp(2.5rem, 6vw, 4em);
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 700;
     color: var(--font-l);
     text-align: left;
@@ -1819,10 +1844,10 @@ article:hover .user-2 {
   display: block;
   width: -moz-max-content;
   width: max-content;
-  height: 90%;
+  height: 78vh;
   background: var(--sec-light);
   border-radius: 2rem 2rem 2rem 2rem;
-  margin-bottom: 22rem;
+  margin-bottom: 3rem;
 }
 
 .team-member__wrapper.team-member__wrapper:hover .team-card__frame {
@@ -1838,7 +1863,7 @@ article:hover .user-2 {
   place-content: center;
   display: block;
   width: 20rem;
-  height: 25rem;
+  height: 100%;
   box-shadow: 0 0 20px transparent;
   position: relative;
   transition: transform 0.8s;
@@ -1849,18 +1874,18 @@ article:hover .user-2 {
 
 .team-member__wrapper .team-card__frame .team-card__front {
   display: block;
-  width: min(100vw, 20rem);
-  height: min(65vh, 25rem);
+  width: 100%;
+  height: min(65vh, 300px);
   background: var(--sec-dark);
   position: absolute;
-  translate: 0 85%;
+  translate: 0 95%;
   transform: rotateY(180deg);
   border-radius: 0 0 2rem 2rem;
 }
 
 .team-member__wrapper .team-card__frame .team-card__front span {
   display: block;
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1877,7 +1902,7 @@ article:hover .user-2 {
 }
 
 .team-member__wrapper .team-card__frame .team-card__front span p {
-  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
   font-weight: 300;
   color: var(--font-m);
   padding-block: 1rem;
@@ -1890,9 +1915,9 @@ article:hover .user-2 {
   align-self: flex-end;
   width: -moz-max-content;
   width: max-content;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
   font-weight: 300;
   color: var(--git-clr);
   border-bottom: 1px solid var --prime-mid;
@@ -1900,17 +1925,17 @@ article:hover .user-2 {
 
 .team-member__wrapper .team-card__frame .team-card__back {
   display: block;
-  width: min(100vw, 20rem);
+  width: 100%;
   height: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  background: linear-gradient(to bottom, var(--shd-light) -180%, var(--sec-dark));
+  background: var(--sec-dark);
   position: absolute;
   backface-visibility: hidden;
   border-radius: 2rem 2rem 0 0;
-  translate: 0 130%;
+  translate: 0 80%;
 }
 
 .team-member__wrapper .team-card__frame .team-card__back .team-card_img {
@@ -1924,7 +1949,7 @@ article:hover .user-2 {
   right: 0;
   bottom: 0;
   z-index: 0;
-  translate: -50% -93.5%;
+  translate: -50% -65%;
   transition: translate 0.3s, height 0.4s;
   margin-inline: auto;
   border-radius: 2rem 2rem 0 0;
@@ -1935,7 +1960,7 @@ article:hover .user-2 {
 }
 
 .team-member__wrapper .team-card__frame .team-card__back p {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   font-size: clamp(1rem, 6vw, 1.5rem);
   font-weight: 300;
   color: var(--font-m);
@@ -1948,7 +1973,7 @@ article:hover .user-2 {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .team-member__wrapper .team-card__frame .team-card__back .team-card-icons img {
@@ -1960,14 +1985,15 @@ article:hover .user-2 {
   padding: 0.2rem;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   .team-member__wrapper {
     display: grid;
     place-content: center;
     display: block;
-    width: 89%;
-    height: 49%;
+    width: 20vw;
+    height: 25vw;
     background: none;
+    margin-left: 30%;
     margin-bottom: -2rem;
   }
   .team-member__wrapper:nth-child(odd) {
@@ -1977,18 +2003,19 @@ article:hover .user-2 {
     margin-top: -4vw;
   }
   .team-member__wrapper.team-member__wrapper:hover .team-card__frame {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
+    translate: 0% 0;
   }
-  .team-member__wrapper.team-member__wrapper:hover .team-card__frame .team-card__back .team-card_img {
-    translate: -50% 0%;
+  .team-member__wrapper .team-member__wrapper:hover .team-card_img {
+    translate: 0% 0%;
   }
   .team-member__wrapper .team-card__frame {
     display: grid;
     place-content: center;
     display: block;
-    width: 20rem;
-    height: 25rem;
-    box-shadow: 0 0 20px var(--shd-light);
+    width: 20vw;
+    height: 25vw;
+    box-shadow: 0 20px 20px var(--shd-light);
     position: relative;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -1997,8 +2024,8 @@ article:hover .user-2 {
   }
   .team-member__wrapper .team-card__frame .team-card__front {
     display: block;
-    width: min(100vw, 20rem);
-    height: min(65vh, 25rem);
+    width: 20vw;
+    height: 25vw;
     translate: 0 0;
     background: linear-gradient(to bottom, var(--prime-dark), var(--prime-light));
     position: absolute;
@@ -2013,6 +2040,7 @@ article:hover .user-2 {
     align-items: center;
     justify-content: center;
     margin-inline: auto;
+    transform: rotateZ(180deg);
   }
   .team-member__wrapper .team-card__frame .team-card__front span p,
   .team-member__wrapper .team-card__frame .team-card__front span a {
@@ -2021,12 +2049,12 @@ article:hover .user-2 {
     margin-inline: inherit;
   }
   .team-member__wrapper .team-card__frame .team-card__front span p {
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--font-l);
-    padding-block: 1rem;
-    margin-bottom: 2rem;
-    border-top: 1px solid var(--font-l);
+    padding-block: 2vh;
+    margin-block: 1vh;
+    border-top: 1px solid transparent;
     border-bottom: 1px solid var(--font-l);
   }
   .team-member__wrapper .team-card__frame .team-card__front span a {
@@ -2035,15 +2063,15 @@ article:hover .user-2 {
     width: max-content;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--git-clr);
     border-bottom: 1px solid var(--git-clr);
   }
   .team-member__wrapper .team-card__frame .team-card__back {
     display: block;
-    width: min(100vw, 20rem);
-    height: min(65vh, 25rem);
+    width: 20vw;
+    height: 25vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2076,7 +2104,7 @@ article:hover .user-2 {
   }
   .team-member__wrapper .team-card__frame .team-card__back p {
     margin-bottom: 1rem;
-    font-size: clamp(1rem, 6vw, 1.5rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--font-l);
     letter-spacing: 0.1;
@@ -2091,15 +2119,15 @@ article:hover .user-2 {
   }
   .team-member__wrapper .team-card__frame .team-card__back .team-card-icons img {
     display: block;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 0.5rem;
     padding: 0.2rem;
   }
 }
 #about-page {
-  background: linear-gradient(to bottom, var(--prime-dark), var(--prime-light));
+  background: linear-gradient(to top, var(--prime-dark), var(--prime-light));
   border-radius: 2rem 2rem 0 0;
   overflow: hidden;
   width: 100vw;
@@ -2136,9 +2164,9 @@ article:hover .user-2 {
   position: relative;
   width: 100%;
   padding-block: 2rem 1rem;
-  font-size: clamp(2.5rem, 6vw, 4em);
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
-  color: var(--clr-font-main);
+  color: var(--clr-font-mob);
 }
 
 #about-page .about-page__grid .about-page_team-heading h3::after {
@@ -2152,7 +2180,7 @@ article:hover .user-2 {
   position: absolute;
   display: block;
   height: 0.5rem;
-  background: linear-gradient(to right, var(--clr-h-brd), transparent);
+  background: linear-gradient(to right, var(--clr-font-mob), transparent);
   width: 80%;
   border-radius: 1rem;
   transition: 0.3s ease-in;
@@ -2164,11 +2192,11 @@ article:hover .user-2 {
   line-height: 1.2;
   font-size: clamp(1rem, 6vw, 1.5rem);
   font-weight: 300;
-  color: var(--font-l);
+  color: var(--clr-font-mob);
   border-bottom: 1px solid var(--font-l);
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   #about-page {
     background: linear-gradient(to bottom, var(--prime-dark), var(--prime-light));
     width: 100vw;
@@ -2179,10 +2207,10 @@ article:hover .user-2 {
   }
   #about-page .about-page__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin-inline: auto;
-    gap: 2rem;
-    padding-left: 1rem;
+    gap: 5vw;
+    padding-left: calc(1rem + 4vw);
     border-radius: 100px 0 0 100px;
     width: 100%;
     height: inherit;
@@ -2204,7 +2232,7 @@ article:hover .user-2 {
     position: relative;
     padding-block: 3rem 2.5rem;
     width: 30%;
-    font-size: clamp(2.5rem, 6vw, 4em);
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 700;
     color: var(--clr-font-main);
   }
@@ -2238,6 +2266,9 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  bottom: 0px;
+  left: 0;
+  z-index: 30;
   background: var(--prime-light);
   height: 18vh;
   width: 100vw;
@@ -2252,7 +2283,7 @@ footer .logo-font {
 }
 
 footer :is(p) {
-  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
   font-weight: 300;
   color: var(--font-l);
   padding-bottom: 0.5rem;
@@ -2261,7 +2292,7 @@ footer :is(p) {
 
 footer :is(a) {
   border-bottom: 2px solid transparent;
-  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
   font-weight: 300;
   color: var(--git-clr);
   font-size: 1rem;
@@ -2323,6 +2354,8 @@ footer .footer-content__wrapper ul li {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
+    bottom: 0;
     background: var(--prime-light);
     height: 10vh;
     width: 1005;
@@ -2335,7 +2368,7 @@ footer .footer-content__wrapper ul li {
     margin-bottom: 0rem;
   }
   footer :is(p) {
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--font-l);
     padding-bottom: 0;
@@ -2343,7 +2376,7 @@ footer .footer-content__wrapper ul li {
   }
   footer :is(a) {
     border-bottom: 2px solid transparent;
-    font-size: clamp(0.9rem, 6vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: 300;
     color: var(--git-clr);
     padding-inline: 1rem;
@@ -2395,13 +2428,6 @@ footer .footer-content__wrapper ul li {
 }
 #ending-page {
   background: darkblue;
-}
-
-html.theme-transition,
-html.theme-transition *,
-html.theme-transition::before,
-html.theme-transition::after {
-  transition: all 0.1s ease-in;
 }
 
 .test {

@@ -1,10 +1,11 @@
 .team-member__wrapper {
   @include gridMiddle();
-  @include boxRectangle(max-content, 90%);
+  @include boxRectangle(max-content, 78vh);
   background: $secondary-light;
   border-radius: $brd-rad-m $brd-rad-m $brd-rad-m $brd-rad-m;
-  margin-bottom: 22rem;
+  margin-bottom: 3rem;
 
+  
   &.team-member__wrapper:hover .team-card__frame {
     transform: none;
   }
@@ -16,7 +17,7 @@
   }
   .team-card__frame {
     @include gridMiddle();
-    @include boxRectangle(20rem, 25rem);
+    @include boxRectangle(20rem,100%);
     box-shadow: 0 0 20px transparent;
     position: relative;
     transition: transform 0.8s;
@@ -24,16 +25,17 @@
     perspective: 500px;
     border-radius: $brd-rad-m $brd-rad-m $brd-rad-m $brd-rad-m;
     .team-card__front {
-      @include boxRectangle($member-card-width, $member-card-height);
+      @include boxRectangle(100%, $member-card-height);
 
-      background: $secondary-dark;
+    background: $secondary-dark;
 
       position: absolute;
-      translate: 0 85%;
+      translate: 0 95%;
       transform: rotateY(180deg);
       border-radius: 0 0 $brd-rad-m $brd-rad-m;
+  
       span {
-        @include boxRectangle(80%, 100%);
+        @include boxRectangle(100%, 100%);
         @include flexBasis(column, center, center);
         margin-inline: auto;
         p,
@@ -54,32 +56,30 @@
         a {
           align-self: flex-end;
           width: max-content;
-          padding-bottom: $padd-small;
-          margin-bottom: $marg-def;
+          padding-bottom: 0;
+          margin-bottom: 0;
           @include small-text($github-clr);
           border-bottom: 1px solid $primary-mid;
         }
       }
     }
     .team-card__back {
-      @include boxRectangle($member-card-width, 10rem);
+      @include boxRectangle(100%, 10rem);
       @include flexBasis(column, center, flex-end);
 
-      background: linear-gradient(
-        to bottom,
-        $team-card-shadow -180%,
-        $secondary-dark
-      );
+      background: 
+        $secondary-dark;
+      
       position: absolute;
       backface-visibility: hidden;
       border-radius: $brd-rad-m $brd-rad-m 0 0;
-      translate: 0 130%;
+      translate: 0 80%;
 
       .team-card_img {
         box-shadow: 0 0 20px transparent;
         @include boxRectangle(100%, 13rem);
         @include absoluteItem(-20%, 50%, 0, 0, 0);
-        translate: -50% -93.5%;
+        translate: -50% -65%;
         transition: translate 0.3s, height 0.4s;
         margin-inline: auto;
         border-radius: $brd-rad-m $brd-rad-m 0 0;
@@ -91,7 +91,7 @@
         }
       }
       p {
-        margin-bottom: $marg-def;
+        margin-bottom: 0;
         @include subheadingSmall($clr-font-m);
 
         letter-spacing: 0.1;
@@ -99,7 +99,7 @@
       .team-card-icons {
         @include flexBasis(row, center, center);
         gap: $padd-xs;
-        margin-bottom: $marg-def;
+        margin-bottom: 0;
         img {
           @include boxQuarter($icon-s, $circle: false);
           background: rgba(255, 255, 255, 0.2);
@@ -110,12 +110,14 @@
     }
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
   .team-member__wrapper {
     @include gridMiddle();
-    @include boxRectangle(89%, 49%);
-    background: none;
+    @include boxRectangle(20vw, 25vw);
+    background:none;
+margin-left:30%;
     margin-bottom: -2rem;
+   
     &:nth-child(odd) {
       margin-top: 4vw;
     }
@@ -123,26 +125,27 @@
       margin-top: -4vw;
     }
     &.team-member__wrapper:hover .team-card__frame {
-      transform: rotateY(180deg);
+      transform: rotateX(180deg);
+      translate: 0% 0;
     }
-    &.team-member__wrapper:hover
-      .team-card__frame
-      .team-card__back
-      .team-card_img {
-      translate: -50% 0%;
+    &    .team-member__wrapper:hover .team-card_img {
+      translate: 0% 0%;
     }
+    
     .team-card__frame {
       @include gridMiddle();
-      @include boxRectangle(20rem, 25rem);
-      box-shadow: 0 0 20px $team-card-shadow;
+      @include boxRectangle(20vw, 25vw);
+      box-shadow: 0 20px 20px $team-card-shadow;
       position: relative;
 
       transition: transform 0.8s;
       transform-style: preserve-3d;
       perspective: 500px;
       border-radius: $brd-rad-m $brd-rad-m $brd-rad-m$brd-rad-m;
+    
+      
       .team-card__front {
-        @include boxRectangle($member-card-width, $member-card-height);
+        @include boxRectangle(20vw, 25vw);
 
         translate: 0 0;
         background: linear-gradient(to bottom, $primary-dark, $primary-light);
@@ -153,6 +156,7 @@
           @include boxRectangle(80%, 100%);
           @include flexBasis(column, center, center);
           margin-inline: auto;
+          transform: rotateZ(180deg);
           p,
           a {
             transform: rotateY(360deg);
@@ -161,10 +165,10 @@
           }
           p {
             @include small-text($clr-font-l);
-            padding-block: $padd-def;
-            margin-bottom: $marg-big;
+            padding-block: 2vh;
+            margin-block: 1vh;
             border: {
-              top: 1px solid $clr-font-l;
+              top: 1px solid transparent;
               bottom: 1px solid $clr-font-l;
             }
           }
@@ -179,7 +183,7 @@
         }
       }
       .team-card__back {
-        @include boxRectangle($member-card-width, $member-card-height);
+        @include boxRectangle(20vw, 25vw);
         @include flexBasis(column, center, flex-end);
         background: linear-gradient(to bottom, $primary-dark, $primary-light-s);
         position: absolute;
@@ -203,7 +207,7 @@
         }
         p {
           margin-bottom: $marg-def;
-          @include subheadingSmall($clr-font-l);
+          @include small-text($clr-font-l);
 
           letter-spacing: 0.1;
         }
@@ -212,7 +216,7 @@
           gap: $padd-xs;
           margin-bottom: $marg-def;
           img {
-            @include boxQuarter($icon-s, $circle: false);
+            @include boxQuarter(1.5rem, $circle: false);
             background: rgba(255, 255, 255, 0.2);
             border-radius: $brd-rad-s;
             padding: 0.2rem;
